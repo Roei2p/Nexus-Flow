@@ -58,7 +58,7 @@ export function validate(wf) {
 
     if (!n.type) { errors.push(`"${n.name}": missing type`); return; }
 
-    const def = byType(n.type);
+    let def = byType(n.type);
     if (!def) {
       if (isHttpFallback(n, nodes)) {
         warnings.push(`"${n.name}": using generic httpRequest fallback for "${n.type}"`);
@@ -68,6 +68,14 @@ export function validate(wf) {
         n.parameters = n.parameters && Object.keys(n.parameters).length
           ? n.parameters
           : { method: 'GET', url: 'https://example.com', options: {} };
+        // n.type was just rewritten, so re-resolve def against the new type.
+        // Leaving it null makes the typeVersion lookup below throw
+        // "Cannot read properties of null (reading 'availableVersions')".
+        def = byType(n.type);
+        if (!def) {
+          errors.push(`"${n.name}": httpRequest fallback unavailable - not installed in this n8n`);
+          return;
+        }
       } else {
         errors.push(`"${n.name}": unknown node type "${n.type}" - not installed in this n8n`);
         return;
@@ -84,31 +92,69 @@ export function validate(wf) {
     }
 
     // ---- parameters ---------------------------------------------------
-    const params = n.parameters || {};
-    const known = new Map(def.properties.map((p) => [p.n, p]));
-    const shown = (p) => {
+    const raw = n.parameters || {};
+    // The same parameter name legitimately repeats with different displayOptions
+    // - e.g. googleSheets "operation" exists once for resource=sheet and once for
+    // resource=spreadsheet, httpRequest "specifyBody" once per contentType.
+    // Keying by name alone silently kept only the last variant, so valid values
+    // were rejected against the wrong variant's options. Keep them all.
+    const known = new Map();
+    for (const p of def.properties) {
+      if (!known.has(p.n)) known.set(p.n, []);
+      known.get(p.n).push(p);
+    }
+    const shownWith = (p, ctx) => {
       if (!p.do) return true;
       const show = p.do.show || {};
       const hide = p.do.hide || {};
       for (const [key, vals] of Object.entries(show)) {
         if (key === '@version') { if (!vals.some((v) => String(v) === String(n.typeVersion))) return false; continue; }
-        if (!vals.some((v) => String(v) === String(params[key]))) return false;
+        if (!vals.some((v) => String(v) === String(ctx[key]))) return false;
       }
       for (const [key, vals] of Object.entries(hide)) {
         if (key === '@version') { if (vals.some((v) => String(v) === String(n.typeVersion))) return false; continue; }
-        if (vals.some((v) => String(v) === String(params[key]))) return false;
+        if (vals.some((v) => String(v) === String(ctx[key]))) return false;
       }
       return true;
     };
 
+    // n8n treats an unset parameter as its declared default when deciding what
+    // the node displays. Judging displayOptions against the raw parameters alone
+    // hid required fields whose visibility hangs off a defaulted discriminator -
+    // e.g. whatsApp messageType defaults to "text", which requires textBody.
+    // Fill in defaults for whatever is currently visible, twice in case one
+    // default unlocks another.
+    const params = { ...raw };
+    for (let pass = 0; pass < 2; pass++) {
+      let added = false;
+      for (const p of def.properties) {
+        if (params[p.n] !== undefined) continue;
+        const dflt = p.def;
+        if (dflt === undefined || dflt === '' || dflt === null) continue;
+        if (!shownWith(p, params)) continue;
+        params[p.n] = dflt;
+        added = true;
+      }
+      if (!added) break;
+    }
+    const shown = (p) => shownWith(p, params);
+
     for (const [k, v] of Object.entries(params)) {
       if (effType === 'n8n-nodes-base.httpRequest' && k === 'url') continue; // fallback has no url schema
-      if (!known.has(k)) { warnings.push(`"${n.name}": param "${k}" does not exist - ignored by n8n`); continue; }
-      const p = known.get(k);
-      if (p.t === 'options' && Array.isArray(p.opts) && p.opts.length && typeof v === 'string') {
-        if (!p.opts.includes(v)) {
-          errors.push(`"${n.name}": param "${k}" = "${v}" is not a valid option (allowed: ${p.opts.slice(0, 8).join(', ')})`);
-        }
+      const variants = known.get(k);
+      if (!variants) { warnings.push(`"${n.name}": param "${k}" does not exist - ignored by n8n`); continue; }
+
+      const optionVariants = variants.filter((p) => p.t === 'options' && Array.isArray(p.opts) && p.opts.length);
+      if (!optionVariants.length || typeof v !== 'string') continue;
+
+      // Judge the value against the variant this node actually displays. When no
+      // variant matches - the discriminating parameter is unset and n8n is using
+      // its default - fall back to every variant rather than reject a valid value.
+      const active = optionVariants.filter(shown);
+      const allowed = new Set((active.length ? active : optionVariants).flatMap((p) => p.opts));
+      if (!allowed.has(v)) {
+        const scope = active.length ? '' : ' (no variant is shown for this node)';
+        errors.push(`"${n.name}": param "${k}" = "${v}" is not a valid option (allowed: ${[...allowed].slice(0, 8).join(', ')}${scope})`);
       }
     }
 

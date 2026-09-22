@@ -38,7 +38,7 @@
         "resource": "message",
         "operation": "send",
         "messagingProduct": "whatsapp",
-        "phoneNumberId": "",
+        "phoneNumberId": "PASTE_PHONE_NUMBER_ID_HERE",
         "recipientPhoneNumber": "+972500000000",
         "messageType": "text",
         "textBody": "={{ $json.text }}"

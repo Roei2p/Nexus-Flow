@@ -1053,6 +1053,23 @@
   ]
  },
  {
+  "type": "n8n-nodes-base.Brandfetch",
+  "displayName": "Brandfetch",
+  "version": "2",
+  "credentials": [
+   "brandfetchApi"
+  ],
+  "params": [
+   "operation",
+   "type",
+   "identifier",
+   "domain",
+   "outputFormat",
+   "cachedOnly",
+   "download"
+  ]
+ },
+ {
   "type": "n8n-nodes-base.bubble",
   "displayName": "Bubble",
   "version": "1",
@@ -1081,6 +1098,18 @@
   "params": [
    "scope",
    "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.calTrigger",
+  "displayName": "Cal.com Trigger",
+  "version": "3",
+  "credentials": [
+   "calApi"
+  ],
+  "params": [
+   "events",
+   "options"
   ]
  },
  {
@@ -1858,19 +1887,27 @@
  {
   "type": "n8n-nodes-base.dateTime",
   "displayName": "Date & Time",
-  "version": "1",
+  "version": "2",
   "credentials": [],
   "params": [
-   "noticeDateTime",
-   "action",
-   "value",
-   "dataPropertyName",
-   "custom",
-   "toFormat",
-   "options",
    "operation",
+   "notice",
+   "includeTime",
+   "outputFieldName",
+   "options",
+   "magnitude",
+   "timeUnit",
    "duration",
-   "timeUnit"
+   "date",
+   "format",
+   "customFormat",
+   "mode",
+   "toNearest",
+   "to",
+   "startDate",
+   "endDate",
+   "units",
+   "part"
   ]
  },
  {
@@ -2088,6 +2125,13 @@
    "additionalFields",
    "options"
   ]
+ },
+ {
+  "type": "n8n-nodes-base.dynamicCredentialCheck",
+  "displayName": "Check Credential Status",
+  "version": "1",
+  "credentials": [],
+  "params": []
  },
  {
   "type": "n8n-nodes-base.e2eTest",
@@ -2527,6 +2571,17 @@
    "fieldsParametersUi",
    "script",
    "scriptParam"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.filter",
+  "displayName": "Filter",
+  "version": "2.3",
+  "credentials": [],
+  "params": [
+   "conditions",
+   "looseTypeValidation",
+   "options"
   ]
  },
  {
@@ -3971,6 +4026,94 @@
   ]
  },
  {
+  "type": "n8n-nodes-base.httpRequest",
+  "displayName": "HTTP Request",
+  "version": "4.5",
+  "credentials": [
+   "httpSslAuth"
+  ],
+  "params": [
+   "curlImport",
+   "method",
+   "url",
+   "authentication",
+   "nodeCredentialType",
+   "googleApiWarning",
+   "genericAuthType",
+   "provideSslCertificates",
+   "provideSslCertificatesNotice",
+   "sslCertificate",
+   "sendQuery",
+   "specifyQuery",
+   "queryParameters",
+   "jsonQuery",
+   "sendHeaders",
+   "specifyHeaders",
+   "headerParameters",
+   "jsonHeaders",
+   "sendBody",
+   "contentType",
+   "specifyBody",
+   "bodyParameters",
+   "jsonBody",
+   "body",
+   "inputDataFieldName",
+   "rawContentType",
+   "options",
+   "optimizeResponse",
+   "responseType",
+   "dataField",
+   "fieldsToInclude",
+   "fields",
+   "cssSelector",
+   "onlyContent",
+   "elementsToOmit",
+   "truncateResponse",
+   "maxLength",
+   "infoMessage"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.hubspot",
+  "displayName": "HubSpot",
+  "version": "2.2",
+  "credentials": [
+   "hubspotApi",
+   "hubspotAppToken",
+   "hubspotOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "email",
+   "additionalFields",
+   "options",
+   "contactId",
+   "returnAll",
+   "limit",
+   "filterGroupsUi",
+   "by",
+   "id",
+   "listId",
+   "name",
+   "companyId",
+   "updateFields",
+   "domain",
+   "stage",
+   "dealId",
+   "filters",
+   "type",
+   "dueDate",
+   "metadata",
+   "engagementId",
+   "pipelineId",
+   "stageId",
+   "ticketName",
+   "ticketId"
+  ]
+ },
+ {
   "type": "n8n-nodes-base.hubspotTrigger",
   "displayName": "HubSpot Trigger",
   "version": "1",
@@ -4031,6 +4174,17 @@
    "allDay",
    "binaryPropertyName",
    "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.if",
+  "displayName": "If",
+  "version": "2.3",
+  "credentials": [],
+  "params": [
+   "conditions",
+   "looseTypeValidation",
+   "options"
   ]
  },
  {
@@ -5075,6 +5229,25 @@
   ]
  },
  {
+  "type": "n8n-nodes-base.messageAnAgent",
+  "displayName": "Message an Agent",
+  "version": "3.1",
+  "credentials": [],
+  "params": [
+   "agentSource",
+   "agentId",
+   "inlineAgent",
+   "message",
+   "useStructuredOutput",
+   "schemaType",
+   "jsonSchemaExample",
+   "jsonSchemaExampleNotice",
+   "outputSchema",
+   "structuredOutputNotice",
+   "advanced"
+  ]
+ },
+ {
   "type": "n8n-nodes-base.messageBird",
   "displayName": "MessageBird",
   "version": "1",
@@ -5987,6 +6160,13 @@
   ]
  },
  {
+  "type": "n8n-nodes-base.noOp",
+  "displayName": "No Operation, do nothing",
+  "version": "1",
+  "credentials": [],
+  "params": []
+ },
+ {
   "type": "n8n-nodes-base.notion",
   "displayName": "Notion",
   "version": "3",
@@ -6422,6 +6602,24 @@
   "params": [
    "operation",
    "url"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.perplexity",
+  "displayName": "Perplexity",
+  "version": "3",
+  "credentials": [
+   "perplexityApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "input",
+   "model",
+   "preset",
+   "simplify",
+   "options",
+   "query"
   ]
  },
  {
@@ -7252,6 +7450,22 @@
   ]
  },
  {
+  "type": "n8n-nodes-base.seaTableTrigger",
+  "displayName": "SeaTable Trigger",
+  "version": "2",
+  "credentials": [
+   "seaTableApi"
+  ],
+  "params": [
+   "event",
+   "tableName",
+   "viewName",
+   "assetColumn",
+   "options",
+   "notice"
+  ]
+ },
+ {
   "type": "n8n-nodes-base.securityScorecard",
   "displayName": "SecurityScorecard",
   "version": "1",
@@ -7580,6 +7794,69 @@
   ]
  },
  {
+  "type": "n8n-nodes-base.slack",
+  "displayName": "Slack",
+  "version": "2.7",
+  "credentials": [
+   "slackApi",
+   "slackOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "channelId",
+   "channelVisibility",
+   "userIds",
+   "options",
+   "userId",
+   "returnAll",
+   "limit",
+   "filters",
+   "resolveData",
+   "name",
+   "ts",
+   "purpose",
+   "topic",
+   "timestamp",
+   "select",
+   "user",
+   "messageType",
+   "text",
+   "blocksUi",
+   "noticeAttachments",
+   "attachments",
+   "postAt",
+   "otherOptions",
+   "scheduledMessageId",
+   "updateFields",
+   "query",
+   "sort",
+   "searchRateLimitNotice",
+   "message",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "advancedInteractivityNotice",
+   "captureResponder",
+   "approvers",
+   "unauthorizedReplyText",
+   "postDecisionBehavior",
+   "target",
+   "fileId",
+   "binaryData",
+   "fileContent",
+   "binaryPropertyName",
+   "email",
+   "Options",
+   "userGroupId",
+   "option",
+   "users"
+  ]
+ },
+ {
   "type": "n8n-nodes-base.slackTrigger",
   "displayName": "Slack Trigger",
   "version": "1",
@@ -7711,6 +7988,18 @@
    "limit",
    "volumePercent",
    "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.spreadsheetFile",
+  "displayName": "Spreadsheet File",
+  "version": "2",
+  "credentials": [],
+  "params": [
+   "operation",
+   "binaryPropertyName",
+   "fileFormat",
+   "options"
   ]
  },
  {
@@ -7964,6 +8253,20 @@
    "collectorIds",
    "resolveData",
    "onlyAnswers"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.switch",
+  "displayName": "Switch",
+  "version": "3.4",
+  "credentials": [],
+  "params": [
+   "mode",
+   "numberOutputs",
+   "output",
+   "rules",
+   "looseTypeValidation",
+   "options"
   ]
  },
  {
@@ -8480,6 +8783,30 @@
    "conversationId",
    "id",
    "title"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.twitter",
+  "displayName": "X (Formerly Twitter)",
+  "version": "2",
+  "credentials": [
+   "twitterOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "user",
+   "text",
+   "additionalFields",
+   "list",
+   "noticeLocation",
+   "noticeAttachments",
+   "tweetDeleteId",
+   "tweetId",
+   "searchText",
+   "returnAll",
+   "limit",
+   "me"
   ]
  },
  {
