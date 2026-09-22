@@ -1,7 +1,25 @@
 // Which Green API hostname actually exists? Sweep candidates via DNS + HTTPS.
 import dns from 'node:dns/promises';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ID = process.argv[2] || '7105249512';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+for (const f of ['.env', 'env']) {
+  const p = path.join(ROOT, f);
+  if (!fs.existsSync(p)) continue;
+  for (const line of fs.readFileSync(p, 'utf8').split(/\r?\n/)) {
+    const m = line.match(/^\s*([A-Za-z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (m && m[2] && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+  }
+}
+
+// Instance id comes from argv or the env file - never hard-coded.
+const ID = process.argv[2] || process.env.idInstance;
+if (!ID) {
+  console.error('Usage: node builder/sweep-greenapi.mjs <idInstance>  (or set idInstance in env)');
+  process.exit(1);
+}
 
 const hosts = [
   `${ID}.api.greenapi.com`,
