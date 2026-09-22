@@ -7,7 +7,9 @@ asyncpg>=0.29.0,<1.0.0
 aiosqlite>=0.20.0,<1.0.0
 httpx>=0.27.0,<1.0.0
 python-dotenv>=1.0.1,<2.0.0
-# LLM Providers (OpenAI, Anthropic, Google Gemini)
+# LLM Providers
+# Primary provider is the NVIDIA API Catalog, called over plain httpx below -
+# no NVIDIA SDK is required. The optional SDKs back the fallback providers.
 google-genai>=0.1.1
 openai>=1.14.0
 anthropic>=0.18.0

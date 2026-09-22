@@ -9,6 +9,118 @@ dotenv.config();
 
 const PORT = 3000;
 
+// ---------------------------------------------------------------------------
+// LLM providers
+//
+// Primary  : NVIDIA API Catalog - OpenAI-compatible, keyed by NVIDIA_API_KEY.
+//            Candidate models are the ones verified usable on this account
+//            (11 of the 82 catalog models), ordered for structured JSON.
+// Fallback : Google Gemini, keyed by GEMINI_API_KEY, only attempted when that
+//            key is present. Kept so an existing Gemini setup still works.
+//
+// Each provider/model pair gets one short retry on transient trouble, then we
+// move to the next model. If nothing succeeds the caller falls back to its own
+// deterministic blueprint builder - a missing or slow LLM must never 500 the
+// endpoint.
+// ---------------------------------------------------------------------------
+
+const NVIDIA_BASE_URL =
+  process.env.NVIDIA_BASE_URL || "https://integrate.api.nvidia.com/v1";
+
+const NVIDIA_CANDIDATE_MODELS = [
+  "deepseek-ai/deepseek-v4.1-flash",
+  "openai/gpt-oss-20b",
+  "nvidia/nemotron-3.5-lightning-30b-a3b",
+  "meta/llama-3.2-11b-vision-instruct",
+  "poolside/laguna-xs-2.1",
+];
+
+const GEMINI_CANDIDATE_MODELS = [
+  "gemini-3.8-flash",
+  "gemini-flash-latest",
+  "gemini-3.1-flash-lite",
+];
+
+/** Models often wrap JSON in ```json fences - strip whatever they put around it. */
+function stripCodeFence(text: string): string {
+  const match = text.match(/^\s*```(?:json)?\s*([\s\S]*?)\s*```\s*$/i);
+  return (match ? match[1] : text).trim();
+}
+
+/** Transient provider trouble that is worth one short retry. */
+function isTransientError(errMessage: string): boolean {
+  const msg = errMessage.toLowerCase();
+  return (
+    msg.includes("429") ||
+    msg.includes("500") ||
+    msg.includes("503") ||
+    msg.includes("high demand") ||
+    msg.includes("unavailable") ||
+    msg.includes("resource_exhausted") ||
+    msg.includes("etimedout") ||
+    msg.includes("econnreset") ||
+    msg.includes("fetch failed") ||
+    msg.includes("abort")
+  );
+}
+
+/** NVIDIA_MODELS=a,b,c overrides the default candidate list. */
+function nvidiaCandidateModels(): string[] {
+  const fromEnv = (process.env.NVIDIA_MODELS || "")
+    .split(",")
+    .map((model) => model.trim())
+    .filter(Boolean);
+  return fromEnv.length ? fromEnv : NVIDIA_CANDIDATE_MODELS;
+}
+
+/** NVIDIA API Catalog: POST {base}/chat/completions (OpenAI-compatible). */
+async function callNvidia(promptText: string): Promise<string | null> {
+  const apiKey = process.env.NVIDIA_API_KEY;
+  if (!apiKey) return null;
+
+  for (const model of nvidiaCandidateModels()) {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const res = await fetch(`${NVIDIA_BASE_URL}/chat/completions`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model,
+            temperature: 0.2,
+            max_tokens: 4096,
+            messages: [{ role: "user", content: promptText }],
+          }),
+          signal: AbortSignal.timeout(60_000),
+        });
+
+        if (!res.ok) {
+          const detail = await res.text().catch(() => "");
+          throw new Error(`${res.status} ${res.statusText} ${detail.slice(0, 300)}`);
+        }
+
+        const payload: any = await res.json();
+        const text = payload?.choices?.[0]?.message?.content?.trim();
+        if (text) return text;
+        throw new Error("empty completion");
+      } catch (err: any) {
+        const errMsg = err?.message || String(err || "");
+        if (isTransientError(errMsg) && attempt === 1) {
+          // Short delay before single retry
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          continue;
+        }
+        // Try next candidate model
+        break;
+      }
+    }
+  }
+
+  return null;
+}
+
 // Lazy initialization for Gemini AI SDK
 let aiClient: GoogleGenAI | null = null;
 function getGeminiClient(): GoogleGenAI | null {
@@ -28,26 +140,20 @@ function getGeminiClient(): GoogleGenAI | null {
 }
 
 /**
- * Resilient Gemini content generation with multi-model fallback:
- * Tries 'gemini-3.8-flash', then 'gemini-flash-latest', then 'gemini-3.1-flash-lite'
- * Handles transient 503 high-demand, 429 rate limits, and network blips gracefully.
+ * Google Gemini fallback, reached only when GEMINI_API_KEY is set.
+ * Handles transient 503 high-demand, 429 rate limits, and network blips.
  */
-async function callGeminiWithFallback(
-  promptText: string,
-  config: any = { responseMimeType: "application/json" }
-): Promise<string | null> {
+async function callGemini(promptText: string): Promise<string | null> {
   const ai = getGeminiClient();
   if (!ai) return null;
 
-  const candidateModels = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-3.1-flash-lite"];
-
-  for (const model of candidateModels) {
+  for (const model of GEMINI_CANDIDATE_MODELS) {
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
         const response = await ai.models.generateContent({
           model,
           contents: promptText,
-          config,
+          config: { responseMimeType: "application/json" },
         });
         const text = response.text?.trim();
         if (text) {
@@ -55,14 +161,7 @@ async function callGeminiWithFallback(
         }
       } catch (err: any) {
         const errMsg = err?.message || String(err || "");
-        const isUnavailableOrRateLimit =
-          errMsg.includes("503") ||
-          errMsg.includes("429") ||
-          errMsg.includes("high demand") ||
-          errMsg.includes("UNAVAILABLE") ||
-          errMsg.includes("RESOURCE_EXHAUSTED");
-
-        if (isUnavailableOrRateLimit && attempt === 1) {
+        if (isTransientError(errMsg) && attempt === 1) {
           // Short delay before single retry
           await new Promise((resolve) => setTimeout(resolve, 500));
           continue;
@@ -74,6 +173,16 @@ async function callGeminiWithFallback(
   }
 
   return null;
+}
+
+/**
+ * Resilient LLM generation with provider fallback: NVIDIA first, then Gemini
+ * when it is configured. Returns null when neither succeeds so callers can use
+ * their deterministic blueprint builder.
+ */
+async function callLLMWithFallback(promptText: string): Promise<string | null> {
+  const text = (await callNvidia(promptText)) ?? (await callGemini(promptText));
+  return text ? stripCodeFence(text) : null;
 }
 
 // In-memory persistent state for live web dashboard session
@@ -553,7 +662,11 @@ async function startServer() {
       status: "ok",
       service: "Nexus-Flow Autonomous Automation Factory",
       timestamp: new Date().toISOString(),
-      gemini_available: !!process.env.GEMINI_API_KEY,
+      llm: {
+        provider: "nvidia",
+        nvidia_available: !!process.env.NVIDIA_API_KEY,
+        gemini_fallback: !!process.env.GEMINI_API_KEY,
+      },
     });
   });
 
@@ -617,7 +730,7 @@ IMPORTANT: If the user wrote in Hebrew, write the title, summary, action names, 
 Return STRICT JSON matching this structure.`;
 
       const fallback = buildFallbackBlueprint(prompt);
-      const raw = await callGeminiWithFallback(`${systemPrompt}\n\nUser Request: ${prompt}`);
+      const raw = await callLLMWithFallback(`${systemPrompt}\n\nUser Request: ${prompt}`);
 
       if (raw) {
         try {
@@ -820,7 +933,7 @@ Provide a structured JSON diagnosis in clear, friendly HEBREW with:
 
 Return STRICT JSON.`;
 
-        const raw = await callGeminiWithFallback(healPrompt, { responseMimeType: "application/json" });
+        const raw = await callLLMWithFallback(healPrompt);
         if (raw) {
           try {
             const parsed = JSON.parse(raw);

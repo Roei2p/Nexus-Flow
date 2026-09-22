@@ -2,7 +2,11 @@ import os
 import json
 import logging
 import uuid
+import asyncio
+import re
 from typing import Dict, Any, List, Optional
+
+import httpx
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 
@@ -407,10 +411,86 @@ class AgentEngine:
     - Component C: Self-Healing & error root-cause remediation
     """
 
+    # NVIDIA API Catalog (OpenAI-compatible). These are the models verified
+    # usable on this account (11 of the 82 catalog models), ordered by
+    # suitability for structured JSON and retried in order.
+    NVIDIA_CANDIDATE_MODELS = [
+        "deepseek-ai/deepseek-v4.1-flash",
+        "openai/gpt-oss-20b",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "meta/llama-3.2-11b-vision-instruct",
+        "poolside/laguna-xs-2.1",
+    ]
+
+    @staticmethod
+    def _strip_code_fence(text: str) -> str:
+        """Models often wrap JSON in ```json fences - strip whatever surrounds it."""
+        match = re.match(r"^\s*```[a-zA-Z]*\s*(.*?)\s*```\s*$", text, re.DOTALL)
+        return match.group(1).strip() if match else text.strip()
+
     def __init__(self):
         self.gemini_api_key = os.getenv("GEMINI_API_KEY")
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+        # Primary provider: NVIDIA API Catalog, keyed by NVIDIA_API_KEY.
+        self.nvidia_api_key = os.getenv("NVIDIA_API_KEY")
+        self.nvidia_base_url = os.getenv(
+            "NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1"
+        ).rstrip("/")
+        self.nvidia_models = [
+            model.strip()
+            for model in (os.getenv("NVIDIA_MODELS") or "").split(",")
+            if model.strip()
+        ] or self.NVIDIA_CANDIDATE_MODELS
+
+    async def _call_nvidia(self, prompt_text: str) -> Optional[str]:
+        """
+        NVIDIA API Catalog: POST {base}/chat/completions (OpenAI-compatible).
+        Returns assistant text, or None when no candidate model succeeds.
+        """
+        if not self.nvidia_api_key:
+            return None
+
+        headers = {
+            "Authorization": f"Bearer {self.nvidia_api_key}",
+            "Content-Type": "application/json",
+        }
+        transient_tokens = ("429", "500", "503", "timed out", "connection", "temporarily")
+
+        for model in self.nvidia_models:
+            for attempt in (1, 2):
+                try:
+                    async with httpx.AsyncClient(timeout=60.0) as client:
+                        response = await client.post(
+                            f"{self.nvidia_base_url}/chat/completions",
+                            headers=headers,
+                            json={
+                                "model": model,
+                                "temperature": 0.2,
+                                "max_tokens": 4096,
+                                "messages": [{"role": "user", "content": prompt_text}],
+                            },
+                        )
+
+                    if response.status_code >= 400:
+                        raise RuntimeError(
+                            f"HTTP {response.status_code}: {response.text[:300]}"
+                        )
+
+                    payload = response.json()
+                    choices = payload.get("choices") or [{}]
+                    text = (choices[0].get("message") or {}).get("content")
+                    if text and text.strip():
+                        return self._strip_code_fence(text)
+                    raise RuntimeError("empty completion")
+                except Exception as exc:  # any failure just moves us to the next try
+                    logger.warning(f"NVIDIA call failed (model={model}, attempt={attempt}): {exc}")
+                    if attempt == 1 and any(token in str(exc) for token in transient_tokens):
+                        await asyncio.sleep(0.5)
+                        continue
+                    break  # next candidate model
+
+        return None
 
     async def generate_workflow(self, prompt: str) -> GenerationResult:
         """
@@ -420,8 +500,22 @@ class AgentEngine:
         """
         logger.info(f"Generating workflow blueprint for prompt: {prompt}")
 
-        # If Gemini SDK is available in environment
-        if self.gemini_api_key:
+        system_prompt = """You are the Nexus-Flow Spec & Orchestrator Agent.
+Your job is to translate natural language user automation requests into an abstract workflow schema.
+Identify the primary Trigger (e.g. google_sheets, stripe, webhook, github), any validation Conditions, and downstream Actions (e.g. pdf_generator, telegram, slack, email, http_request).
+Return strict JSON matching the schema."""
+        user_content = f"{system_prompt}\n\nUser Request: {prompt}"
+
+        # Provider 1: NVIDIA API Catalog (OpenAI-compatible) - the key we hold.
+        raw_json: Optional[str] = None
+        if self.nvidia_api_key:
+            try:
+                raw_json = await self._call_nvidia(user_content)
+            except Exception as e:
+                logger.warning(f"NVIDIA generation failed: {e}")
+
+        # Provider 2: Google Gemini - only attempted when GEMINI_API_KEY is set.
+        if not raw_json and self.gemini_api_key:
             try:
                 from google import genai
                 from google.genai import types
@@ -431,21 +525,22 @@ class AgentEngine:
                     http_options={"headers": {"User-Agent": "aistudio-build"}}
                 )
 
-                system_prompt = """You are the Nexus-Flow Spec & Orchestrator Agent.
-Your job is to translate natural language user automation requests into an abstract workflow schema.
-Identify the primary Trigger (e.g. google_sheets, stripe, webhook, github), any validation Conditions, and downstream Actions (e.g. pdf_generator, telegram, slack, email, http_request).
-Return strict JSON matching the schema."""
-
                 response = client.models.generate_content(
                     model="gemini-3.8-flash",
-                    contents=f"{system_prompt}\n\nUser Request: {prompt}",
+                    contents=user_content,
                     config=types.GenerateContentConfig(
                         response_mime_type="application/json",
                     )
                 )
 
-                raw_json = response.text.strip()
-                parsed = json.loads(raw_json)
+                if response.text and response.text.strip():
+                    raw_json = response.text.strip()
+            except Exception as e:
+                logger.warning(f"Gemini generation failed: {e}")
+
+        if raw_json:
+            try:
+                parsed = json.loads(self._strip_code_fence(raw_json))
                 schema = AbstractWorkflowSchema(**parsed)
                 n8n_blueprint = build_n8n_blueprint(schema)
                 return GenerationResult(
