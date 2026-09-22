@@ -1,0 +1,9403 @@
+[
+ {
+  "type": "n8n-nodes-base.actionNetwork",
+  "displayName": "Action Network",
+  "version": "1",
+  "credentials": [
+   "actionNetworkApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "personId",
+   "eventId",
+   "simple",
+   "attendanceId",
+   "returnAll",
+   "limit",
+   "originSystem",
+   "title",
+   "additionalFields",
+   "email_addresses",
+   "updateFields",
+   "petitionId",
+   "signatureId",
+   "name",
+   "tagId",
+   "taggingId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.activeCampaign",
+  "displayName": "ActiveCampaign",
+  "version": "1",
+  "credentials": [
+   "activeCampaignApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "tagType",
+   "name",
+   "additionalFields",
+   "tagId",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "simple",
+   "contactId",
+   "contactTagId",
+   "listId",
+   "accountId",
+   "filters",
+   "account",
+   "contact",
+   "accountContactId",
+   "email",
+   "updateIfExists",
+   "title",
+   "value",
+   "currency",
+   "group",
+   "stage",
+   "owner",
+   "dealId",
+   "dealNote",
+   "dealNoteId",
+   "service",
+   "externalid",
+   "logoUrl",
+   "linkUrl",
+   "connectionId",
+   "externalcheckoutid",
+   "source",
+   "totalPrice",
+   "connectionid",
+   "customerid",
+   "externalCreatedDate",
+   "abandonedDate",
+   "orderProducts",
+   "orderId",
+   "ecommerceCustomerId",
+   "procuctId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.activeCampaignTrigger",
+  "displayName": "ActiveCampaign Trigger",
+  "version": "1",
+  "credentials": [
+   "activeCampaignApi"
+  ],
+  "params": [
+   "events",
+   "sources"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.acuitySchedulingTrigger",
+  "displayName": "Acuity Scheduling Trigger",
+  "version": "1",
+  "credentials": [
+   "acuitySchedulingApi",
+   "acuitySchedulingOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "event",
+   "resolveData"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.adalo",
+  "displayName": "Adalo",
+  "version": "1",
+  "credentials": [
+   "adaloApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "collectionId",
+   "rowId",
+   "dataToSend",
+   "inputsToIgnore",
+   "fieldsUi",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.affinity",
+  "displayName": "Affinity",
+  "version": "1",
+  "credentials": [
+   "affinityApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "listId",
+   "returnAll",
+   "limit",
+   "entityId",
+   "additionalFields",
+   "listEntryId",
+   "name",
+   "domain",
+   "organizationId",
+   "updateFields",
+   "options",
+   "firstName",
+   "lastName",
+   "emails",
+   "personId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.affinityTrigger",
+  "displayName": "Affinity Trigger",
+  "version": "1",
+  "credentials": [
+   "affinityApi"
+  ],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.aggregate",
+  "displayName": "Aggregate",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "aggregate",
+   "fieldsToAggregate",
+   "destinationFieldName",
+   "include",
+   "fieldsToExclude",
+   "fieldsToInclude",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.agileCrm",
+  "displayName": "Agile CRM",
+  "version": "1",
+  "credentials": [
+   "agileCrmApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "contactId",
+   "returnAll",
+   "limit",
+   "filterType",
+   "matchType",
+   "simple",
+   "filters",
+   "jsonNotice",
+   "filterJson",
+   "options",
+   "jsonParameters",
+   "additionalFieldsJson",
+   "additionalFields",
+   "companyId",
+   "dealId",
+   "closeDate",
+   "expectedValue",
+   "milestone",
+   "name",
+   "probability"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.airtable",
+  "displayName": "Airtable",
+  "version": "2.2",
+  "credentials": [
+   "airtableTokenApi",
+   "airtableOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "base",
+   "table",
+   "columns",
+   "options",
+   "id",
+   "filterByFormula",
+   "returnAll",
+   "limit",
+   "sort"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.airtableTrigger",
+  "displayName": "Airtable Trigger",
+  "version": "1",
+  "credentials": [
+   "airtableApi",
+   "airtableTokenApi",
+   "airtableOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "baseId",
+   "tableId",
+   "triggerField",
+   "downloadAttachments",
+   "downloadFieldNames",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.airtop",
+  "displayName": "Airtop",
+  "version": "1.1",
+  "credentials": [
+   "airtopApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "agentId",
+   "agentParameters",
+   "profileName",
+   "awaitExecution",
+   "timeout",
+   "saveProfileOnTermination",
+   "record",
+   "timeoutMinutes",
+   "proxy",
+   "proxyConfig",
+   "proxyUrl",
+   "additionalFields",
+   "notice",
+   "sessionId",
+   "windowId",
+   "url",
+   "getLiveView",
+   "includeNavigationBar",
+   "screenResolution",
+   "disableResize",
+   "outputImageAsBinary",
+   "fileId",
+   "outputBinaryFile",
+   "returnAll",
+   "limit",
+   "sessionIds",
+   "outputSingleItem",
+   "elementDescription",
+   "includeHiddenElements",
+   "fileName",
+   "fileType",
+   "source",
+   "binaryPropertyName",
+   "triggerFileInputParameter",
+   "sessionMode",
+   "autoTerminateSession",
+   "prompt",
+   "clickType",
+   "formData",
+   "scrollingMode",
+   "scrollToElement",
+   "scrollToEdge",
+   "scrollBy",
+   "scrollWithin",
+   "text",
+   "pressEnterKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.aiTransform",
+  "displayName": "AI Transform",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "instructions",
+   "codeGeneratedForPrompt",
+   "jsCode"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.amqp",
+  "displayName": "AMQP Sender",
+  "version": "1",
+  "credentials": [
+   "amqp"
+  ],
+  "params": [
+   "sink",
+   "headerParametersJson",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.amqpTrigger",
+  "displayName": "AMQP Trigger",
+  "version": "1",
+  "credentials": [
+   "amqp"
+  ],
+  "params": [
+   "sink",
+   "clientname",
+   "subscription",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.apiTemplateIo",
+  "displayName": "APITemplate.io",
+  "version": "1",
+  "credentials": [
+   "apiTemplateIoApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "imageTemplateId",
+   "pdfTemplateId",
+   "jsonParameters",
+   "download",
+   "binaryProperty",
+   "overridesJson",
+   "propertiesJson",
+   "overridesUi",
+   "propertiesUi",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.asana",
+  "displayName": "Asana",
+  "version": "1",
+  "credentials": [
+   "asanaApi",
+   "asanaOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "taskId",
+   "name",
+   "otherProperties",
+   "returnAll",
+   "limit",
+   "options",
+   "workspace",
+   "id",
+   "filters",
+   "projectId",
+   "section",
+   "searchTaskProperties",
+   "isTextHtml",
+   "text",
+   "additionalFields",
+   "project",
+   "tag",
+   "userId",
+   "team",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.asanaTrigger",
+  "displayName": "Asana Trigger",
+  "version": "1",
+  "credentials": [
+   "asanaApi",
+   "asanaOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "workspace"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.autopilot",
+  "displayName": "Autopilot",
+  "version": "1",
+  "credentials": [
+   "autopilotApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email",
+   "additionalFields",
+   "contactId",
+   "returnAll",
+   "limit",
+   "triggerId",
+   "listId",
+   "name"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.autopilotTrigger",
+  "displayName": "Autopilot Trigger",
+  "version": "1",
+  "credentials": [
+   "autopilotApi"
+  ],
+  "params": [
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsCertificateManager",
+  "displayName": "AWS Certificate Manager",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "certificateArn",
+   "bucketName",
+   "certificateKey",
+   "returnAll",
+   "limit",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsCognito",
+  "displayName": "AWS Cognito",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "userPool",
+   "newGroupName",
+   "additionalFields",
+   "group",
+   "includeUsers",
+   "returnAll",
+   "limit",
+   "newUserName",
+   "user",
+   "simple",
+   "filters",
+   "userAttributes"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsComprehend",
+  "displayName": "AWS Comprehend",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "languageCode",
+   "text",
+   "simple",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsDynamoDb",
+  "displayName": "AWS DynamoDB",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "tableName",
+   "dataToSend",
+   "autoParseNumbers",
+   "inputsToIgnore",
+   "fieldsUi",
+   "additionalFields",
+   "returnValues",
+   "keysUi",
+   "simple",
+   "select",
+   "scan",
+   "filterExpression",
+   "keyConditionExpression",
+   "eavUi",
+   "returnAll",
+   "limit",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsElb",
+  "displayName": "AWS ELB",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "ipAddressType",
+   "name",
+   "schema",
+   "type",
+   "subnets",
+   "additionalFields",
+   "loadBalancerId",
+   "returnAll",
+   "limit",
+   "filters",
+   "listenerId",
+   "certificateId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsIam",
+  "displayName": "AWS IAM",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "user",
+   "group",
+   "userName",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "groupName",
+   "includeUsers"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsLambda",
+  "displayName": "AWS Lambda",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "operation",
+   "function",
+   "qualifier",
+   "invocationType",
+   "payload"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsRekognition",
+  "displayName": "AWS Rekognition",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "type",
+   "binaryData",
+   "binaryPropertyName",
+   "bucket",
+   "name",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsS3",
+  "displayName": "AWS S3",
+  "version": "2",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "bucketName",
+   "folderName",
+   "folderKey",
+   "options",
+   "sourcePath",
+   "destinationPath",
+   "fileName",
+   "binaryData",
+   "fileContent",
+   "binaryPropertyName",
+   "tagsUi",
+   "fileKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsSes",
+  "displayName": "AWS SES",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "fromEmailAddress",
+   "templateName",
+   "templateContent",
+   "templateSubject",
+   "successRedirectionURL",
+   "failureRedirectionURL",
+   "email",
+   "additionalFields",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "isBodyHtml",
+   "subject",
+   "body",
+   "fromEmail",
+   "toAddresses",
+   "templateDataUi",
+   "subjectPart",
+   "htmlPart"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsSns",
+  "displayName": "AWS SNS",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "operation",
+   "name",
+   "options",
+   "topic",
+   "subject",
+   "message"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsSnsTrigger",
+  "displayName": "AWS SNS Trigger",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "topic"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsSqs",
+  "displayName": "AWS SQS",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "operation",
+   "queue",
+   "queueType",
+   "sendInputData",
+   "message",
+   "messageGroupId",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsTextract",
+  "displayName": "AWS Textract",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "operation",
+   "binaryPropertyName",
+   "simple"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.awsTranscribe",
+  "displayName": "AWS Transcribe",
+  "version": "1",
+  "credentials": [
+   "aws",
+   "awsAssumeRole"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "transcriptionJobName",
+   "mediaFileUri",
+   "detectLanguage",
+   "languageCode",
+   "options",
+   "returnTranscript",
+   "simple",
+   "returnAll",
+   "limit",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.azureCosmosDb",
+  "displayName": "Azure Cosmos DB",
+  "version": "1",
+  "credentials": [
+   "microsoftAzureCosmosDbSharedKeyApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "containerCreate",
+   "partitionKey",
+   "additionalFields",
+   "container",
+   "simple",
+   "returnAll",
+   "limit",
+   "customProperties",
+   "item",
+   "query",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.azureStorage",
+  "displayName": "Azure Storage",
+  "version": "1",
+  "credentials": [
+   "azureStorageOAuth2Api",
+   "azureStorageSharedKeyApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "container",
+   "blobCreate",
+   "from",
+   "binaryPropertyName",
+   "url",
+   "options",
+   "blob",
+   "returnAll",
+   "limit",
+   "containerCreate"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.bambooHr",
+  "displayName": "BambooHR",
+  "version": "1",
+  "credentials": [
+   "bambooHrApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "synced",
+   "firstName",
+   "lastName",
+   "address",
+   "dateOfBirth",
+   "department",
+   "division",
+   "employeeNumber",
+   "exempt",
+   "gender",
+   "hireDate",
+   "location",
+   "maritalStatus",
+   "mobilePhone",
+   "paidPer",
+   "payRate",
+   "payType",
+   "preferredName",
+   "ssn",
+   "additionalFields",
+   "employeeId",
+   "options",
+   "returnAll",
+   "limit",
+   "addasasress",
+   "updateFields",
+   "fileId",
+   "output",
+   "simplifyOutput",
+   "categoryId",
+   "binaryPropertyName",
+   "reportId",
+   "format"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.bannerbear",
+  "displayName": "Bannerbear",
+  "version": "1",
+  "credentials": [
+   "bannerbearApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "templateId",
+   "additionalFields",
+   "modificationsUi",
+   "imageId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.baserow",
+  "displayName": "Baserow",
+  "version": "1.1",
+  "credentials": [
+   "baserowApi",
+   "baserowTokenApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "databaseId",
+   "tableId",
+   "rowId",
+   "dataToSend",
+   "inputsToIgnore",
+   "fieldsUi",
+   "rowsUi",
+   "rowIds",
+   "rowIdProperty",
+   "returnAll",
+   "limit",
+   "additionalOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.beeminder",
+  "displayName": "Beeminder",
+  "version": "1",
+  "credentials": [
+   "beeminderApi",
+   "beeminderOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "goalName",
+   "amount",
+   "datapoints",
+   "slug",
+   "title",
+   "goal_type",
+   "gunits",
+   "returnAll",
+   "limit",
+   "value",
+   "datapointId",
+   "additionalFields",
+   "updateFields",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.bitbucketTrigger",
+  "displayName": "Bitbucket Trigger",
+  "version": "1.1",
+  "credentials": [
+   "bitbucketApi",
+   "bitbucketAccessTokenApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "workspace",
+   "events",
+   "repository"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.bitly",
+  "displayName": "Bitly",
+  "version": "1",
+  "credentials": [
+   "bitlyApi",
+   "bitlyOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "longUrl",
+   "additionalFields",
+   "deeplink",
+   "id",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.bitwarden",
+  "displayName": "Bitwarden",
+  "version": "1",
+  "credentials": [
+   "bitwardenApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "collectionId",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "filters",
+   "groupId",
+   "name",
+   "accessAll",
+   "additionalFields",
+   "memberIds",
+   "memberId",
+   "type",
+   "email",
+   "groupIds"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.box",
+  "displayName": "Box",
+  "version": "1",
+  "credentials": [
+   "boxOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "fileId",
+   "parentId",
+   "additionalFields",
+   "binaryPropertyName",
+   "query",
+   "returnAll",
+   "limit",
+   "accessibleBy",
+   "useEmail",
+   "email",
+   "userId",
+   "groupId",
+   "role",
+   "options",
+   "fileName",
+   "binaryData",
+   "fileContent",
+   "name",
+   "folderId",
+   "recursive",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.boxTrigger",
+  "displayName": "Box Trigger",
+  "version": "1",
+  "credentials": [
+   "boxOAuth2Api"
+  ],
+  "params": [
+   "events",
+   "targetType",
+   "targetId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.bubble",
+  "displayName": "Bubble",
+  "version": "1",
+  "credentials": [
+   "bubbleApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "typeName",
+   "properties",
+   "objectId",
+   "returnAll",
+   "limit",
+   "jsonParameters",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.calendlyTrigger",
+  "displayName": "Calendly Trigger",
+  "version": "2",
+  "credentials": [
+   "calendlyOAuth2Api"
+  ],
+  "params": [
+   "scope",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.chargebee",
+  "displayName": "Chargebee",
+  "version": "1",
+  "credentials": [
+   "chargebeeApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "properties",
+   "maxResults",
+   "filters",
+   "invoiceId",
+   "subscriptionId",
+   "endOfTerm"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.chargebeeTrigger",
+  "displayName": "Chargebee Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.circleCi",
+  "displayName": "CircleCI",
+  "version": "1",
+  "credentials": [
+   "circleCiApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "vcs",
+   "projectSlug",
+   "pipelineNumber",
+   "returnAll",
+   "limit",
+   "filters",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.ciscoWebex",
+  "displayName": "Webex by Cisco",
+  "version": "1",
+  "credentials": [
+   "ciscoWebexOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "title",
+   "start",
+   "end",
+   "additionalFields",
+   "meetingId",
+   "options",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "destination",
+   "roomId",
+   "specifyPersonBy",
+   "toPersonId",
+   "toPersonEmail",
+   "text",
+   "messageId",
+   "markdown",
+   "markdownText"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.ciscoWebexTrigger",
+  "displayName": "Webex by Cisco Trigger",
+  "version": "1",
+  "credentials": [
+   "ciscoWebexOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "event",
+   "resolveData",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.citrixAdc",
+  "displayName": "Netscaler ADC",
+  "version": "1",
+  "credentials": [
+   "citrixAdcApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "certificateFileName",
+   "certificateFormat",
+   "certificateType",
+   "certificateRequestFileName",
+   "caCertificateFileName",
+   "caCertificateFileFormat",
+   "caPrivateKeyFileName",
+   "caPrivateKeyFileFormat",
+   "privateKeyFileName",
+   "caSerialFileNumber",
+   "privateKeyFormat",
+   "additionalFields",
+   "certificateKeyPairName",
+   "password",
+   "notifyExpiration",
+   "notificationPeriod",
+   "certificateBundle",
+   "fileLocation",
+   "binaryProperty",
+   "options",
+   "fileName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.clearbit",
+  "displayName": "Clearbit",
+  "version": "1",
+  "credentials": [
+   "clearbitApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "domain",
+   "additionalFields",
+   "name",
+   "email"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.clickUp",
+  "displayName": "ClickUp",
+  "version": "1",
+  "credentials": [
+   "clickUpApi",
+   "clickUpOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "task",
+   "name",
+   "checklist",
+   "updateFields",
+   "additionalFields",
+   "checklistItem",
+   "commentOn",
+   "id",
+   "commentText",
+   "comment",
+   "commentsOn",
+   "limit",
+   "team",
+   "space",
+   "folder",
+   "filters",
+   "goal",
+   "type",
+   "keyResult",
+   "taskId",
+   "tagName",
+   "listId",
+   "newName",
+   "foregroundColor",
+   "backgroundColor",
+   "returnAll",
+   "folderless",
+   "list",
+   "includeSubtasks",
+   "includeMarkdownDescription",
+   "field",
+   "jsonParse",
+   "value",
+   "dependsOnTask",
+   "running",
+   "timeEntry",
+   "start",
+   "duration",
+   "archived",
+   "timeEntryIds",
+   "tagsUi",
+   "tagNames"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.clickUpTrigger",
+  "displayName": "ClickUp Trigger",
+  "version": "1",
+  "credentials": [
+   "clickUpApi",
+   "clickUpOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "team",
+   "events",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.clockify",
+  "displayName": "Clockify",
+  "version": "1",
+  "credentials": [
+   "clockifyApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "workspaceId",
+   "name",
+   "clientId",
+   "additionalFields",
+   "updateFields",
+   "projectId",
+   "tagId",
+   "taskId",
+   "filters",
+   "start",
+   "timeEntryId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.clockifyTrigger",
+  "displayName": "Clockify Trigger",
+  "version": "1",
+  "credentials": [
+   "clockifyApi"
+  ],
+  "params": [
+   "workspaceId",
+   "watchField"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.cloudflare",
+  "displayName": "Cloudflare",
+  "version": "1",
+  "credentials": [
+   "cloudflareApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "zoneId",
+   "certificate",
+   "privateKey",
+   "returnAll",
+   "limit",
+   "filters",
+   "certificateId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.cockpit",
+  "displayName": "Cockpit",
+  "version": "1",
+  "credentials": [
+   "cockpitApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "collection",
+   "returnAll",
+   "limit",
+   "options",
+   "id",
+   "jsonDataFields",
+   "dataFieldsJson",
+   "dataFieldsUi",
+   "form",
+   "singleton"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.coda",
+  "displayName": "Coda",
+  "version": "1.1",
+  "credentials": [
+   "codaApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "docId",
+   "tableId",
+   "options",
+   "rowId",
+   "returnAll",
+   "limit",
+   "columnId",
+   "formulaId",
+   "controlId",
+   "viewId",
+   "keyName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.code",
+  "displayName": "Code",
+  "version": "2",
+  "credentials": [],
+  "params": [
+   "mode",
+   "language",
+   "jsCode",
+   "notice",
+   "pythonCode"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.coinGecko",
+  "displayName": "CoinGecko",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "resource",
+   "operation",
+   "searchBy",
+   "coinId",
+   "baseCurrency",
+   "baseCurrencies",
+   "platformId",
+   "contractAddress",
+   "contractAddresses",
+   "quoteCurrency",
+   "quoteCurrencies",
+   "days",
+   "date",
+   "returnAll",
+   "limit",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.compareDatasets",
+  "displayName": "Compare Datasets",
+  "version": "2.3",
+  "credentials": [],
+  "params": [
+   "infoBox",
+   "mergeByFields",
+   "resolve",
+   "fuzzyCompare",
+   "preferWhenMix",
+   "exceptWhenMix",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.compression",
+  "displayName": "Compression",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "binaryPropertyName",
+   "outputFormat",
+   "fileName",
+   "binaryPropertyOutput",
+   "outputPrefix"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.confluence",
+  "displayName": "Confluence",
+  "version": "1",
+  "credentials": [
+   "confluenceCloudOAuth2Api",
+   "atlassianServiceAccountApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "site",
+   "attachmentId",
+   "purge",
+   "space",
+   "page",
+   "returnAll",
+   "limit",
+   "download",
+   "binaryPropertyName",
+   "minorEdit",
+   "comment",
+   "parentCommentId",
+   "bodyFormat",
+   "bodyPlainText",
+   "bodyStorage",
+   "bodyAdf",
+   "labels",
+   "title",
+   "parentPage",
+   "options",
+   "deleteChildrenNotice",
+   "deleteCommentNotice",
+   "commentId",
+   "includeDescendants",
+   "maxPages",
+   "label",
+   "labelName",
+   "status",
+   "cql"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.contentful",
+  "displayName": "Contentful",
+  "version": "1",
+  "credentials": [
+   "contentfulApi"
+  ],
+  "params": [
+   "source",
+   "resource",
+   "operation",
+   "environmentId",
+   "contentTypeId",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "entryId",
+   "assetId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.convertKit",
+  "displayName": "ConvertKit",
+  "version": "1",
+  "credentials": [
+   "convertKitApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "id",
+   "label",
+   "returnAll",
+   "limit",
+   "email",
+   "additionalFields",
+   "name",
+   "tagId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.convertKitTrigger",
+  "displayName": "ConvertKit Trigger",
+  "version": "1",
+  "credentials": [
+   "convertKitApi"
+  ],
+  "params": [
+   "event",
+   "formId",
+   "courseId",
+   "link",
+   "productId",
+   "tagId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.convertToFile",
+  "displayName": "Convert to File",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "binaryPropertyName",
+   "options",
+   "sourceProperty",
+   "mode",
+   "title",
+   "start",
+   "end",
+   "allDay",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.copper",
+  "displayName": "Copper",
+  "version": "1",
+  "credentials": [
+   "copperApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "companyId",
+   "returnAll",
+   "limit",
+   "filterFields",
+   "updateFields",
+   "leadId",
+   "customerSourceId",
+   "primaryContactId",
+   "opportunityId",
+   "personId",
+   "projectId",
+   "taskId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.copperTrigger",
+  "displayName": "Copper Trigger",
+  "version": "1",
+  "credentials": [
+   "copperApi"
+  ],
+  "params": [
+   "resource",
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.cortex",
+  "displayName": "Cortex",
+  "version": "1",
+  "credentials": [
+   "cortexApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "analyzer",
+   "observableType",
+   "observableValue",
+   "binaryPropertyName",
+   "tlp",
+   "additionalFields",
+   "responder",
+   "entityType",
+   "jsonObject",
+   "objectData",
+   "parameters",
+   "jobId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.crateDb",
+  "displayName": "CrateDB",
+  "version": "1.1",
+  "credentials": [
+   "crateDb"
+  ],
+  "params": [
+   "operation",
+   "query",
+   "schema",
+   "table",
+   "columns",
+   "updateKey",
+   "returnFields",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.cron",
+  "displayName": "Cron",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "triggerTimes"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.crypto",
+  "displayName": "Crypto",
+  "version": "2",
+  "credentials": [
+   "crypto"
+  ],
+  "params": [
+   "action",
+   "binaryData",
+   "binaryPropertyName",
+   "type",
+   "value",
+   "dataPropertyName",
+   "encoding",
+   "algorithm",
+   "encodingType",
+   "stringLength",
+   "mode",
+   "cipher"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.currents",
+  "displayName": "Currents",
+  "version": "1",
+  "credentials": [
+   "currentsApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "actionId",
+   "projectId",
+   "filters",
+   "name",
+   "actionType",
+   "actionTags",
+   "matcherType",
+   "matcherValue",
+   "createOptions",
+   "updateFields",
+   "instanceId",
+   "limit",
+   "dateStart",
+   "dateEnd",
+   "options",
+   "runId",
+   "machineIds",
+   "resetOptions",
+   "githubRunId",
+   "githubRunAttempt",
+   "cancelGithubOptions",
+   "specFilePath",
+   "testTitle",
+   "signature"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.currentsTrigger",
+  "displayName": "Currents Trigger",
+  "version": "1",
+  "credentials": [
+   "currentsApi"
+  ],
+  "params": [
+   "projectId",
+   "noticeGroups",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.customerIo",
+  "displayName": "Customer.io",
+  "version": "1",
+  "credentials": [
+   "customerIoApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "campaignId",
+   "period",
+   "jsonParameters",
+   "additionalFields",
+   "id",
+   "additionalFieldsJson",
+   "customerId",
+   "eventName",
+   "segmentId",
+   "customerIds"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.customerIoTrigger",
+  "displayName": "Customer.io Trigger",
+  "version": "1",
+  "credentials": [
+   "customerIoApi"
+  ],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.databricks",
+  "displayName": "Databricks",
+  "version": "1",
+  "credentials": [
+   "databricksApi",
+   "databricksOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "volumePath",
+   "filePath",
+   "dataFieldName",
+   "directoryPath",
+   "additionalFields",
+   "spaceId",
+   "conversationId",
+   "messageId",
+   "attachmentId",
+   "message",
+   "initialMessage",
+   "catalogName",
+   "schemaName",
+   "fullName",
+   "volumeName",
+   "volumeType",
+   "functionName",
+   "inputParams",
+   "returnType",
+   "routineBody",
+   "routineDefinition",
+   "comment",
+   "tableName",
+   "storageLocation",
+   "tableAdditionalFields",
+   "warehouseId",
+   "query",
+   "queryParameters",
+   "endpointName",
+   "requestBody",
+   "indexName",
+   "primaryKey",
+   "indexType",
+   "deltaSyncIndexSpec",
+   "directAccessIndexSpec",
+   "queryType",
+   "queryText",
+   "queryVector",
+   "searchMode",
+   "columns",
+   "numResults",
+   "enableReranking",
+   "rerankerModel",
+   "columnsToRerank",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.dataTable",
+  "displayName": "Data table",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "resource",
+   "operation",
+   "dataTableId",
+   "matchType",
+   "filters",
+   "options",
+   "columns",
+   "returnAll",
+   "limit",
+   "orderBy",
+   "orderByColumn",
+   "orderByDirection",
+   "clearWarning",
+   "tableName",
+   "deleteWarning",
+   "newName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.dateTime",
+  "displayName": "Date & Time",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "noticeDateTime",
+   "action",
+   "value",
+   "dataPropertyName",
+   "custom",
+   "toFormat",
+   "options",
+   "operation",
+   "duration",
+   "timeUnit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.debugHelper",
+  "displayName": "DebugHelper",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "category",
+   "throwErrorType",
+   "throwErrorMessage",
+   "memorySizeValue",
+   "randomDataType",
+   "nanoidAlphabet",
+   "nanoidLength",
+   "randomDataSeed",
+   "randomDataCount",
+   "randomDataSingleArray"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.deepL",
+  "displayName": "DeepL",
+  "version": "1",
+  "credentials": [
+   "deepLApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "text",
+   "translateTo",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.demio",
+  "displayName": "Demio",
+  "version": "1",
+  "credentials": [
+   "demioApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "filters",
+   "eventId",
+   "additionalFields",
+   "firstName",
+   "email",
+   "dateId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.dhl",
+  "displayName": "DHL",
+  "version": "1",
+  "credentials": [
+   "dhlApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "trackingNumber",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.discord",
+  "displayName": "Discord",
+  "version": "2",
+  "credentials": [
+   "discordBotApi",
+   "discordOAuth2Api",
+   "discordWebhookApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "guildId",
+   "channelId",
+   "returnAll",
+   "limit",
+   "options",
+   "messageId",
+   "emoji",
+   "sendTo",
+   "userId",
+   "content",
+   "embeds",
+   "files",
+   "message",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "name",
+   "type",
+   "deleteMessageSeconds",
+   "reason",
+   "reasonCustom",
+   "after",
+   "role",
+   "duration"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.discourse",
+  "displayName": "Discourse",
+  "version": "1",
+  "credentials": [
+   "discourseApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "color",
+   "textColor",
+   "returnAll",
+   "limit",
+   "categoryId",
+   "updateFields",
+   "groupId",
+   "title",
+   "content",
+   "additionalFields",
+   "postId",
+   "email",
+   "username",
+   "password",
+   "by",
+   "externalId",
+   "flag",
+   "options",
+   "usernames"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.disqus",
+  "displayName": "Disqus",
+  "version": "1",
+  "credentials": [
+   "disqusApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "id",
+   "additionalFields",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.drift",
+  "displayName": "Drift",
+  "version": "1",
+  "credentials": [
+   "driftApi",
+   "driftOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "email",
+   "additionalFields",
+   "contactId",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.dropbox",
+  "displayName": "Dropbox",
+  "version": "1",
+  "credentials": [
+   "dropboxApi",
+   "dropboxOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "path",
+   "toPath",
+   "binaryPropertyName",
+   "binaryData",
+   "fileContent",
+   "query",
+   "fileStatus",
+   "returnAll",
+   "limit",
+   "simple",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.dropcontact",
+  "displayName": "Dropcontact",
+  "version": "1",
+  "credentials": [
+   "dropcontactApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "requestId",
+   "email",
+   "simplify",
+   "additionalFields",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.e2eTest",
+  "displayName": "E2E Test",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "fieldId",
+   "remoteOptions",
+   "rlc",
+   "resourceMapper",
+   "otherField"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.e2eTestPollingTrigger",
+  "displayName": "E2E Test Polling Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "url"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.editImage",
+  "displayName": "Edit Image",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "dataPropertyName",
+   "operations",
+   "backgroundColor",
+   "width",
+   "height",
+   "primitive",
+   "color",
+   "startPositionX",
+   "startPositionY",
+   "endPositionX",
+   "endPositionY",
+   "cornerRadius",
+   "text",
+   "fontSize",
+   "fontColor",
+   "positionX",
+   "positionY",
+   "horizontalAlignment",
+   "verticalAlignment",
+   "lineLength",
+   "blur",
+   "sigma",
+   "borderWidth",
+   "borderHeight",
+   "borderColor",
+   "dataPropertyNameComposite",
+   "operator",
+   "resizeOption",
+   "rotate",
+   "degreesX",
+   "degreesY",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.egoi",
+  "displayName": "E-goi",
+  "version": "1",
+  "credentials": [
+   "egoiApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "list",
+   "email",
+   "contactId",
+   "resolveData",
+   "additionalFields",
+   "updateFields",
+   "by",
+   "returnAll",
+   "limit",
+   "simple"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.elasticsearch",
+  "displayName": "Elasticsearch",
+  "version": "1",
+  "credentials": [
+   "elasticsearchApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "indexId",
+   "documentId",
+   "options",
+   "simple",
+   "returnAll",
+   "paginateNotice",
+   "limit",
+   "dataToSend",
+   "inputsToIgnore",
+   "fieldsUi",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.elasticSecurity",
+  "displayName": "Elastic Security",
+  "version": "1",
+  "credentials": [
+   "elasticSecurityApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "title",
+   "connectorId",
+   "connectorType",
+   "issueType",
+   "priority",
+   "urgency",
+   "severity",
+   "impact",
+   "category",
+   "issueTypes",
+   "severityCode",
+   "additionalFields",
+   "caseId",
+   "returnAll",
+   "limit",
+   "filters",
+   "sortOptions",
+   "updateFields",
+   "comment",
+   "simple",
+   "commentId",
+   "tag",
+   "name",
+   "apiUrl",
+   "email",
+   "apiToken",
+   "projectKey",
+   "username",
+   "password",
+   "apiKeyId",
+   "apiKeySecret",
+   "orgId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.emailReadImap",
+  "displayName": "Email Trigger (IMAP)",
+  "version": "2.2",
+  "credentials": [
+   "imap"
+  ],
+  "params": [
+   "mailbox",
+   "postProcessAction",
+   "downloadAttachments",
+   "format",
+   "dataPropertyAttachmentsPrefixName",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.emailSend",
+  "displayName": "Send Email",
+  "version": "2.1",
+  "credentials": [
+   "smtp"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "fromEmail",
+   "toEmail",
+   "subject",
+   "emailFormat",
+   "text",
+   "html",
+   "options",
+   "message",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.emelia",
+  "displayName": "Emelia",
+  "version": "1",
+  "credentials": [
+   "emeliaApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "campaignId",
+   "contactEmail",
+   "additionalFields",
+   "campaignName",
+   "returnAll",
+   "limit",
+   "options",
+   "contactListId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.emeliaTrigger",
+  "displayName": "Emelia Trigger",
+  "version": "1",
+  "credentials": [
+   "emeliaApi"
+  ],
+  "params": [
+   "campaignId",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.erpNext",
+  "displayName": "ERPNext",
+  "version": "1",
+  "credentials": [
+   "erpNextApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "docType",
+   "returnAll",
+   "limit",
+   "options",
+   "properties",
+   "documentName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.errorTrigger",
+  "displayName": "Error Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.eventbriteTrigger",
+  "displayName": "Eventbrite Trigger",
+  "version": "1",
+  "credentials": [
+   "eventbriteApi",
+   "eventbriteOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "organization",
+   "event",
+   "actions",
+   "resolveData"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.executeCommand",
+  "displayName": "Execute Command",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "executeOnce",
+   "command"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.executeWorkflow",
+  "displayName": "Execute Sub-workflow",
+  "version": "1.3",
+  "credentials": [],
+  "params": [
+   "operation",
+   "outdatedVersionWarning",
+   "source",
+   "sourceDeprecationNotice",
+   "workflowId",
+   "workflowPath",
+   "workflowJson",
+   "workflowUrl",
+   "executeWorkflowNotice",
+   "workflowInputs",
+   "mode",
+   "eachModeDeprecationNotice",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.executeWorkflowTrigger",
+  "displayName": "Execute Workflow Trigger",
+  "version": "1.2",
+  "credentials": [],
+  "params": [
+   "events",
+   "notice",
+   "outdatedVersionWarning",
+   "inputSource",
+   "jsonExample_notice",
+   "jsonExample",
+   "workflowInputs",
+   "returnOutput"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.executionData",
+  "displayName": "Execution Data",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "operation",
+   "dataToSave"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.extractFromFile",
+  "displayName": "Extract from File",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "binaryPropertyName",
+   "options",
+   "destinationKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.facebookGraphApi",
+  "displayName": "Facebook Graph API",
+  "version": "1",
+  "credentials": [
+   "facebookGraphApi",
+   "facebookGraphApiOAuth2Api"
+  ],
+  "params": [
+   "authType",
+   "hostUrl",
+   "httpRequestMethod",
+   "graphApiVersion",
+   "node",
+   "edge",
+   "allowUnauthorizedCerts",
+   "sendBinaryData",
+   "binaryPropertyName",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.facebookLeadAdsTrigger",
+  "displayName": "Facebook Lead Ads Trigger",
+  "version": "1",
+  "credentials": [
+   "facebookLeadAdsOAuth2Api"
+  ],
+  "params": [
+   "facebookLeadAdsNotice",
+   "event",
+   "page",
+   "form",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.facebookTrigger",
+  "displayName": "Facebook Trigger",
+  "version": "1",
+  "credentials": [
+   "facebookGraphAppApi",
+   "facebookGraphAppOAuth2Api"
+  ],
+  "params": [
+   "authType",
+   "appId",
+   "whatsappBusinessAccountNotice",
+   "object",
+   "fields",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.figmaTrigger",
+  "displayName": "Figma Trigger (Beta)",
+  "version": "1",
+  "credentials": [
+   "figmaApi",
+   "figmaOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "teamId",
+   "triggerOn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.filemaker",
+  "displayName": "FileMaker",
+  "version": "1",
+  "credentials": [
+   "fileMaker"
+  ],
+  "params": [
+   "action",
+   "layout",
+   "recid",
+   "offset",
+   "limit",
+   "getPortals",
+   "portals",
+   "responseLayout",
+   "queries",
+   "setSort",
+   "sortParametersUi",
+   "setScriptBefore",
+   "scriptBefore",
+   "scriptBeforeParam",
+   "setScriptSort",
+   "scriptSort",
+   "scriptSortParam",
+   "setScriptAfter",
+   "scriptAfter",
+   "scriptAfterParam",
+   "modId",
+   "fieldsParametersUi",
+   "script",
+   "scriptParam"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.flow",
+  "displayName": "Flow",
+  "version": "1",
+  "credentials": [
+   "flowApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "workspaceId",
+   "name",
+   "additionalFields",
+   "taskId",
+   "updateFields",
+   "filters",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.flowTrigger",
+  "displayName": "Flow Trigger",
+  "version": "1",
+  "credentials": [
+   "flowApi"
+  ],
+  "params": [
+   "resource",
+   "listIds",
+   "taskIds"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.form",
+  "displayName": "n8n Form",
+  "version": "2.5",
+  "credentials": [],
+  "params": [
+   "triggerNotice",
+   "operation",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "limitWaitTime",
+   "limitType",
+   "resumeAmount",
+   "resumeUnit",
+   "maxDateAndTime",
+   "options",
+   "respondWith",
+   "redirectUrl",
+   "completionTitle",
+   "completionMessage",
+   "responseText",
+   "inputDataFieldName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.formIoTrigger",
+  "displayName": "Form.io Trigger",
+  "version": "1",
+  "credentials": [
+   "formIoApi"
+  ],
+  "params": [
+   "projectId",
+   "formId",
+   "events",
+   "simple"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.formstackTrigger",
+  "displayName": "Formstack Trigger",
+  "version": "1",
+  "credentials": [
+   "formstackApi",
+   "formstackOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "formId",
+   "simple"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.formTrigger",
+  "displayName": "n8n Form Trigger",
+  "version": "2.6",
+  "credentials": [
+   "httpBasicAuth"
+  ],
+  "params": [
+   "authentication",
+   "requireExecuteAccess",
+   "path",
+   "formTitle",
+   "formDescription",
+   "formFields",
+   "responseMode",
+   "formNotice",
+   "addFormPage",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.freshdesk",
+  "displayName": "Freshdesk",
+  "version": "1",
+  "credentials": [
+   "freshdeskApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "requester",
+   "requesterIdentificationValue",
+   "status",
+   "priority",
+   "source",
+   "options",
+   "ticketId",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "name",
+   "email",
+   "contactId",
+   "additionalFields",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.freshservice",
+  "displayName": "Freshservice",
+  "version": "1",
+  "credentials": [
+   "freshserviceApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email",
+   "firstName",
+   "roles",
+   "additionalFields",
+   "agentId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "name",
+   "agentGroupId",
+   "agentRoleId",
+   "title",
+   "bodyHtml",
+   "visibility",
+   "visibleFrom",
+   "announcementId",
+   "assetTypeId",
+   "requesterId",
+   "subject",
+   "plannedStartDate",
+   "plannedEndDate",
+   "changeId",
+   "departmentId",
+   "locationId",
+   "dueBy",
+   "problemId",
+   "productId",
+   "releaseType",
+   "priority",
+   "status",
+   "releaseId",
+   "primaryEmail",
+   "requesterGroupId",
+   "applicationType",
+   "softwareId",
+   "description",
+   "ticketId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.freshworksCrm",
+  "displayName": "Freshworks CRM",
+  "version": "1",
+  "credentials": [
+   "freshworksCrmApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "accountId",
+   "view",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "title",
+   "fromDate",
+   "endDate",
+   "attendees",
+   "appointmentId",
+   "filters",
+   "firstName",
+   "lastName",
+   "emails",
+   "contactId",
+   "amount",
+   "dealId",
+   "description",
+   "targetableType",
+   "targetable_id",
+   "noteId",
+   "sales_activity_type_id",
+   "ownerId",
+   "from_date",
+   "end_date",
+   "salesActivityId",
+   "query",
+   "entities",
+   "searchField",
+   "customFieldName",
+   "customFieldValue",
+   "fieldValue",
+   "options",
+   "dueDate",
+   "taskId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.ftp",
+  "displayName": "FTP",
+  "version": "1.1",
+  "credentials": [
+   "ftp",
+   "sftp"
+  ],
+  "params": [
+   "protocol",
+   "operation",
+   "path",
+   "options",
+   "binaryPropertyName",
+   "oldPath",
+   "newPath",
+   "binaryData",
+   "fileContent",
+   "recursive"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.function",
+  "displayName": "Function",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "functionCode"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.functionItem",
+  "displayName": "Function Item",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "functionCode"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.getResponse",
+  "displayName": "GetResponse",
+  "version": "1",
+  "credentials": [
+   "getResponseApi",
+   "getResponseOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "email",
+   "campaignId",
+   "additionalFields",
+   "contactId",
+   "options",
+   "returnAll",
+   "limit",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.getResponseTrigger",
+  "displayName": "GetResponse Trigger",
+  "version": "1",
+  "credentials": [
+   "getResponseApi",
+   "getResponseOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "events",
+   "listIds",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.ghost",
+  "displayName": "Ghost",
+  "version": "1",
+  "credentials": [
+   "ghostAdminApi",
+   "ghostContentApi"
+  ],
+  "params": [
+   "source",
+   "resource",
+   "operation",
+   "title",
+   "contentFormat",
+   "content",
+   "additionalFields",
+   "postId",
+   "by",
+   "identifier",
+   "options",
+   "returnAll",
+   "limit",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.git",
+  "displayName": "Git",
+  "version": "1.1",
+  "credentials": [
+   "gitPassword"
+  ],
+  "params": [
+   "authentication",
+   "operation",
+   "repositoryPath",
+   "pathsToAdd",
+   "key",
+   "value",
+   "options",
+   "sourceRepository",
+   "message",
+   "returnAll",
+   "limit",
+   "branchName",
+   "name"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.github",
+  "displayName": "GitHub",
+  "version": "1.1",
+  "credentials": [
+   "githubApi",
+   "githubOAuth2Api",
+   "githubAppApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "base",
+   "head",
+   "title",
+   "body",
+   "draft",
+   "pullRequestNumber",
+   "editFields",
+   "commentId",
+   "mergeMethod",
+   "commitTitle",
+   "commitMessage",
+   "mergeQueueNotice",
+   "webhookNotice",
+   "owner",
+   "repository",
+   "workflowId",
+   "ref",
+   "inputs",
+   "options",
+   "filePath",
+   "binaryData",
+   "fileContent",
+   "binaryPropertyName",
+   "additionalParameters",
+   "asBinaryProperty",
+   "labels",
+   "assignees",
+   "issueNumber",
+   "lockReason",
+   "releaseTag",
+   "additionalFields",
+   "release_id",
+   "returnAll",
+   "limit",
+   "getRepositoryIssuesFilters",
+   "getRepositoryPullRequestsFilters",
+   "reviewId",
+   "event",
+   "organization",
+   "email",
+   "getUserIssuesFilters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.githubTrigger",
+  "displayName": "Github Trigger",
+  "version": "1",
+  "credentials": [
+   "githubApi",
+   "githubOAuth2Api",
+   "githubAppApi"
+  ],
+  "params": [
+   "notice",
+   "authentication",
+   "owner",
+   "repository",
+   "events",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gitlab",
+  "displayName": "GitLab",
+  "version": "1",
+  "credentials": [
+   "gitlabApi",
+   "gitlabOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "owner",
+   "repository",
+   "title",
+   "body",
+   "due_date",
+   "labels",
+   "assignee_ids",
+   "issueNumber",
+   "editFields",
+   "lockReason",
+   "releaseTag",
+   "additionalFields",
+   "projectId",
+   "tag_name",
+   "returnAll",
+   "limit",
+   "getRepositoryIssuesFilters",
+   "filePath",
+   "page",
+   "additionalParameters",
+   "asBinaryProperty",
+   "binaryPropertyName",
+   "binaryData",
+   "fileContent",
+   "commitMessage",
+   "branch"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gitlabTrigger",
+  "displayName": "GitLab Trigger",
+  "version": "1",
+  "credentials": [
+   "gitlabApi",
+   "gitlabOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "owner",
+   "repository",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gmail",
+  "displayName": "Gmail",
+  "version": "2.2",
+  "credentials": [
+   "googleApi",
+   "gmailOAuth2"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "messageId",
+   "subject",
+   "threadNotice",
+   "emailType",
+   "message",
+   "options",
+   "returnAll",
+   "limit",
+   "name",
+   "labelId",
+   "sendTo",
+   "simple",
+   "simplifyMemoryNotice",
+   "filtersNotice",
+   "filters",
+   "labelIds",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "threadId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gmailTrigger",
+  "displayName": "Gmail Trigger",
+  "version": "1.4",
+  "credentials": [
+   "googleApi",
+   "gmailOAuth2"
+  ],
+  "params": [
+   "authentication",
+   "event",
+   "simple",
+   "simplifyMemoryNotice",
+   "maxResults",
+   "filters",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gong",
+  "displayName": "Gong",
+  "version": "1",
+  "credentials": [
+   "gongApi",
+   "gongOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "call",
+   "options",
+   "returnAll",
+   "limit",
+   "filters",
+   "user"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleAds",
+  "displayName": "Google Ads",
+  "version": "1",
+  "credentials": [
+   "googleAdsOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "campaigsNotice",
+   "managerCustomerId",
+   "clientCustomerId",
+   "campaignId",
+   "additionalOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleAnalytics",
+  "displayName": "Google Analytics",
+  "version": "2",
+  "credentials": [
+   "googleAnalyticsOAuth2"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "propertyType",
+   "propertyId",
+   "dateRange",
+   "startDate",
+   "endDate",
+   "metricsGA4",
+   "dimensionsGA4",
+   "returnAll",
+   "limit",
+   "simple",
+   "additionalFields",
+   "viewId",
+   "metricsUA",
+   "dimensionsUA",
+   "userId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleBigQuery",
+  "displayName": "Google BigQuery",
+  "version": "2.1",
+  "credentials": [
+   "googleApi",
+   "googleBigQueryOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "projectId",
+   "datasetId",
+   "tableId",
+   "sqlQuery",
+   "options",
+   "dataMode",
+   "info",
+   "fieldsUi"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleBooks",
+  "displayName": "Google Books",
+  "version": "2",
+  "credentials": [
+   "googleApi",
+   "googleBooksOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "myLibrary",
+   "searchQuery",
+   "userId",
+   "shelfId",
+   "volumeId",
+   "volumePosition",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleBusinessProfile",
+  "displayName": "Google Business Profile",
+  "version": "1",
+  "credentials": [
+   "googleBusinessProfileOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "account",
+   "location",
+   "postType",
+   "summary",
+   "title",
+   "startDateTime",
+   "endDateTime",
+   "startDate",
+   "endDate",
+   "alertType",
+   "additionalOptions",
+   "post",
+   "returnAll",
+   "limit",
+   "notice",
+   "review",
+   "reply"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleBusinessProfileTrigger",
+  "displayName": "Google Business Profile Trigger",
+  "version": "1",
+  "credentials": [
+   "googleBusinessProfileOAuth2Api"
+  ],
+  "params": [
+   "event",
+   "account",
+   "location"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleCalendar",
+  "displayName": "Google Calendar",
+  "version": "1.3",
+  "credentials": [
+   "googleCalendarOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "calendar",
+   "timeMin",
+   "timeMax",
+   "options",
+   "start",
+   "end",
+   "useDefaultReminders",
+   "additionalFields",
+   "remindersUi",
+   "eventId",
+   "returnAll",
+   "limit",
+   "modifyTarget",
+   "updateFields",
+   "useN8nTimeZone"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleCalendarTrigger",
+  "displayName": "Google Calendar Trigger",
+  "version": "1",
+  "credentials": [
+   "googleCalendarOAuth2Api"
+  ],
+  "params": [
+   "calendarId",
+   "triggerOn",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleChat",
+  "displayName": "Google Chat",
+  "version": "1",
+  "credentials": [
+   "googleApi",
+   "googleChatOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "memberId",
+   "spaceId",
+   "returnAll",
+   "limit",
+   "jsonParameters",
+   "messageUi",
+   "jsonNotice",
+   "messageJson",
+   "additionalFields",
+   "messageId",
+   "updateFieldsUi",
+   "updateFieldsJson",
+   "message",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleCloudNaturalLanguage",
+  "displayName": "Google Cloud Natural Language",
+  "version": "1",
+  "credentials": [
+   "googleCloudNaturalLanguageOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "source",
+   "content",
+   "gcsContentUri",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleCloudStorage",
+  "displayName": "Google Cloud Storage",
+  "version": "1.1",
+  "credentials": [
+   "googleApi",
+   "googleCloudStorageOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "projectId",
+   "projectRLC",
+   "bucketName",
+   "prefix",
+   "projection",
+   "returnAll",
+   "getFilters",
+   "createAcl",
+   "createBody",
+   "objectName",
+   "updateProjection",
+   "alt",
+   "createFromBinary",
+   "createBinaryPropertyName",
+   "createContent",
+   "binaryPropertyName",
+   "maxResults",
+   "createData",
+   "updateData",
+   "createQuery",
+   "getParameters",
+   "metagenAndAclQuery",
+   "encryptionHeaders",
+   "listFilters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleContacts",
+  "displayName": "Google Contacts",
+  "version": "1",
+  "credentials": [
+   "googleContactsOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "familyName",
+   "givenName",
+   "additionalFields",
+   "contactId",
+   "fields",
+   "rawData",
+   "returnAll",
+   "limit",
+   "useQuery",
+   "query",
+   "options",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleDocs",
+  "displayName": "Google Docs",
+  "version": "2",
+  "credentials": [
+   "googleApi",
+   "googleDocsOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "driveId",
+   "folderId",
+   "title",
+   "documentURL",
+   "simple",
+   "actionsUi",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleDrive",
+  "displayName": "Google Drive",
+  "version": "3",
+  "credentials": [
+   "googleApi",
+   "googleDriveOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "name",
+   "options",
+   "driveId",
+   "returnAll",
+   "limit",
+   "fileId",
+   "sameFolder",
+   "folderId",
+   "content",
+   "permissionsUi",
+   "changeFileContent",
+   "inputDataFieldName",
+   "newUpdatedFileName",
+   "searchMethod",
+   "queryString",
+   "filter",
+   "folderNoRootId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleDriveTrigger",
+  "displayName": "Google Drive Trigger",
+  "version": "1",
+  "credentials": [
+   "googleApi",
+   "googleDriveOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "triggerOn",
+   "fileToWatch",
+   "event",
+   "folderToWatch",
+   "asas",
+   "driveToWatch",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+  "displayName": "Google Cloud Firestore",
+  "version": "1.1",
+  "credentials": [
+   "googleFirebaseCloudFirestoreOAuth2Api",
+   "googleApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "projectId",
+   "database",
+   "collection",
+   "documentId",
+   "columns",
+   "simple",
+   "returnAll",
+   "limit",
+   "updateKey",
+   "query",
+   "queryParameters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleFirebaseRealtimeDatabase",
+  "displayName": "Google Cloud Realtime Database",
+  "version": "1",
+  "credentials": [
+   "googleFirebaseRealtimeDatabaseOAuth2Api"
+  ],
+  "params": [
+   "projectId",
+   "operation",
+   "path",
+   "attributes"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googlePerspective",
+  "displayName": "Google Perspective",
+  "version": "1",
+  "credentials": [
+   "googlePerspectiveOAuth2Api"
+  ],
+  "params": [
+   "operation",
+   "text",
+   "requestedAttributesUi",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleSheets",
+  "displayName": "Google Sheets",
+  "version": "4.7",
+  "credentials": [
+   "googleApi",
+   "googleSheetsOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "documentId",
+   "sheetName",
+   "dataMode",
+   "autoMapNotice",
+   "fieldsUi",
+   "columns",
+   "options",
+   "clear",
+   "keepFirstRow",
+   "startIndex",
+   "rowsToDelete",
+   "columnsToDelete",
+   "range",
+   "title",
+   "toDelete",
+   "numberToDelete",
+   "filtersUI",
+   "combineFilters",
+   "columnToMatchOn",
+   "valueToMatchOn",
+   "sheetsUi"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleSheetsTrigger",
+  "displayName": "Google Sheets Trigger",
+  "version": "1",
+  "credentials": [
+   "googleApi",
+   "googleSheetsTriggerOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "documentId",
+   "sheetName",
+   "event",
+   "includeInOutput",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleSlides",
+  "displayName": "Google Slides",
+  "version": "2",
+  "credentials": [
+   "googleApi",
+   "googleSlidesOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "title",
+   "presentationId",
+   "returnAll",
+   "limit",
+   "pageObjectId",
+   "textUi",
+   "options",
+   "download",
+   "binaryProperty"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleTasks",
+  "displayName": "Google Tasks",
+  "version": "1",
+  "credentials": [
+   "googleTasksOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "task",
+   "title",
+   "additionalFields",
+   "taskId",
+   "returnAll",
+   "limit",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.googleTranslate",
+  "displayName": "Google Translate",
+  "version": "2",
+  "credentials": [
+   "googleApi",
+   "googleTranslateOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "text",
+   "translateTo"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gotify",
+  "displayName": "Gotify",
+  "version": "1",
+  "credentials": [
+   "gotifyApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "message",
+   "additionalFields",
+   "options",
+   "messageId",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.goToWebinar",
+  "displayName": "GoToWebinar",
+  "version": "1",
+  "credentials": [
+   "goToWebinarOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "webinarKey",
+   "sessionKey",
+   "registrantKey",
+   "details",
+   "returnAll",
+   "limit",
+   "isExternal",
+   "organizerKey",
+   "givenName",
+   "email",
+   "coorganizerKey",
+   "name",
+   "panelistKey",
+   "firstName",
+   "lastName",
+   "additionalFields",
+   "subject",
+   "times",
+   "notifyParticipants",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.grafana",
+  "displayName": "Grafana",
+  "version": "1",
+  "credentials": [
+   "grafanaApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "title",
+   "additionalFields",
+   "dashboardUidOrUrl",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "name",
+   "teamId",
+   "userId",
+   "memberId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.graphql",
+  "displayName": "GraphQL",
+  "version": "1.1",
+  "credentials": [
+   "httpBasicAuth",
+   "httpCustomAuth",
+   "httpDigestAuth",
+   "httpHeaderAuth",
+   "httpQueryAuth",
+   "oAuth1Api",
+   "oAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "nodeCredentialType",
+   "requestMethod",
+   "endpoint",
+   "allowUnauthorizedCerts",
+   "requestFormat",
+   "query",
+   "variables",
+   "operationName",
+   "responseFormat",
+   "dataPropertyName",
+   "headerParametersUi"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.grist",
+  "displayName": "Grist",
+  "version": "1",
+  "credentials": [
+   "gristApi"
+  ],
+  "params": [
+   "operation",
+   "docId",
+   "tableId",
+   "rowId",
+   "returnAll",
+   "limit",
+   "additionalOptions",
+   "upsertCriteria",
+   "onMany",
+   "dataToSend",
+   "inputsToIgnore",
+   "fieldsToSend"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gSuiteAdmin",
+  "displayName": "Google Workspace Admin",
+  "version": "1",
+  "credentials": [
+   "gSuiteAdminOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "deviceId",
+   "returnAll",
+   "limit",
+   "projection",
+   "includeChildOrgunits",
+   "filter",
+   "sort",
+   "updateOptions",
+   "action",
+   "groupId",
+   "name",
+   "email",
+   "additionalFields",
+   "updateFields",
+   "userId",
+   "firstName",
+   "lastName",
+   "password",
+   "username",
+   "domain",
+   "output",
+   "fields",
+   "customFieldMask"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.gumroadTrigger",
+  "displayName": "Gumroad Trigger",
+  "version": "1",
+  "credentials": [
+   "gumroadApi",
+   "gumroadOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.hackerNews",
+  "displayName": "Hacker News",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "resource",
+   "operation",
+   "articleId",
+   "username",
+   "returnAll",
+   "limit",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.haloPSA",
+  "displayName": "HaloPSA",
+  "version": "1",
+  "credentials": [
+   "haloPSAApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "clientName",
+   "additionalFields",
+   "clientId",
+   "simplify",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "ticketType",
+   "summary",
+   "details",
+   "ticketId",
+   "siteName",
+   "selectOption",
+   "siteId",
+   "userName",
+   "userId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.harvest",
+  "displayName": "Harvest",
+  "version": "1",
+  "credentials": [
+   "harvestApi",
+   "harvestOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "accountId",
+   "returnAll",
+   "limit",
+   "filters",
+   "id",
+   "name",
+   "additionalFields",
+   "updateFields",
+   "firstName",
+   "clientId",
+   "projectId",
+   "expenseCategoryId",
+   "spentDate",
+   "isBillable",
+   "billBy",
+   "budgetBy",
+   "taskId",
+   "lastName",
+   "email"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.helpScout",
+  "displayName": "Help Scout",
+  "version": "1",
+  "credentials": [
+   "helpScoutOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "mailboxId",
+   "status",
+   "subject",
+   "type",
+   "resolveData",
+   "additionalFields",
+   "threadsUi",
+   "conversationId",
+   "returnAll",
+   "limit",
+   "options",
+   "addressUi",
+   "chatsUi",
+   "emailsUi",
+   "phonesUi",
+   "socialProfilesUi",
+   "websitesUi",
+   "customerId",
+   "updateFields",
+   "text",
+   "attachmentsUi"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.helpScoutTrigger",
+  "displayName": "Help Scout Trigger",
+  "version": "1",
+  "credentials": [
+   "helpScoutOAuth2Api"
+  ],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.highLevel",
+  "displayName": "HighLevel",
+  "version": "2",
+  "credentials": [
+   "highLevelOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "contactCreateNotice",
+   "email",
+   "phone",
+   "additionalFields",
+   "contactId",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "filters",
+   "options",
+   "pipelineId",
+   "name",
+   "status",
+   "opportunityId",
+   "title",
+   "dueDate",
+   "completed",
+   "taskId",
+   "calendarId",
+   "locationId",
+   "startTime",
+   "startDate",
+   "endDate"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.homeAssistant",
+  "displayName": "Home Assistant",
+  "version": "1",
+  "credentials": [
+   "homeAssistantApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "cameraEntityId",
+   "binaryPropertyName",
+   "returnAll",
+   "limit",
+   "eventType",
+   "eventAttributes",
+   "additionalFields",
+   "domain",
+   "service",
+   "serviceAttributes",
+   "entityId",
+   "state",
+   "stateAttributes",
+   "template"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.htmlExtract",
+  "displayName": "HTML Extract",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "sourceData",
+   "dataPropertyName",
+   "extractionValues",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.hubspotTrigger",
+  "displayName": "HubSpot Trigger",
+  "version": "1",
+  "credentials": [
+   "hubspotDeveloperApi"
+  ],
+  "params": [
+   "eventsUi",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.humanticAi",
+  "displayName": "Humantic AI",
+  "version": "1",
+  "credentials": [
+   "humanticAiApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "userId",
+   "sendResume",
+   "binaryPropertyName",
+   "options",
+   "text"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.hunter",
+  "displayName": "Hunter",
+  "version": "1",
+  "credentials": [
+   "hunterApi"
+  ],
+  "params": [
+   "operation",
+   "domain",
+   "onlyEmails",
+   "returnAll",
+   "limit",
+   "filters",
+   "firstname",
+   "lastname",
+   "email"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.iCal",
+  "displayName": "iCalendar",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "title",
+   "start",
+   "end",
+   "allDay",
+   "binaryPropertyName",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.intercom",
+  "displayName": "Intercom",
+  "version": "1",
+  "credentials": [
+   "intercomApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "id",
+   "returnAll",
+   "limit",
+   "filters",
+   "selectBy",
+   "value",
+   "updateBy",
+   "identifierType",
+   "idValue",
+   "jsonParameters",
+   "additionalFields",
+   "customAttributesJson",
+   "customAttributesUi",
+   "deleteBy",
+   "email",
+   "listBy",
+   "companyId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.interval",
+  "displayName": "Interval",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "interval",
+   "unit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.invoiceNinja",
+  "displayName": "Invoice Ninja",
+  "version": "2",
+  "credentials": [
+   "invoiceNinjaApi"
+  ],
+  "params": [
+   "apiVersion",
+   "resource",
+   "operation",
+   "additionalFields",
+   "billingAddressUi",
+   "contactsUi",
+   "shippingAddressUi",
+   "clientId",
+   "options",
+   "returnAll",
+   "limit",
+   "invoiceItemsUi",
+   "invoiceId",
+   "timeLogsUi",
+   "taskId",
+   "invoice",
+   "amount",
+   "paymentId",
+   "expenseId",
+   "quoteId",
+   "bankTransactionId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.invoiceNinjaTrigger",
+  "displayName": "Invoice Ninja Trigger",
+  "version": "2",
+  "credentials": [
+   "invoiceNinjaApi"
+  ],
+  "params": [
+   "apiVersion",
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.itemLists",
+  "displayName": "Item Lists",
+  "version": "3.1",
+  "credentials": [],
+  "params": [
+   "resource",
+   "operation",
+   "aggregate",
+   "fieldsToAggregate",
+   "destinationFieldName",
+   "include",
+   "fieldsToExclude",
+   "fieldsToInclude",
+   "options",
+   "maxItems",
+   "keep",
+   "compare",
+   "fieldsToCompare",
+   "type",
+   "sortFieldsUi",
+   "code",
+   "fieldToSplitOut",
+   "fieldsToSummarize",
+   "fieldsToSplitBy"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.iterable",
+  "displayName": "Iterable",
+  "version": "1",
+  "credentials": [
+   "iterableApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "identifier",
+   "value",
+   "preferUserId",
+   "by",
+   "userId",
+   "email",
+   "listId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.jenkins",
+  "displayName": "Jenkins",
+  "version": "1",
+  "credentials": [
+   "jenkinsApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "triggerParamsNotice",
+   "job",
+   "param",
+   "newJob",
+   "xml",
+   "createNotice",
+   "reason",
+   "instanceNotice",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.jinaAi",
+  "displayName": "Jina AI",
+  "version": "1",
+  "credentials": [
+   "jinaAiApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "url",
+   "simplify",
+   "options",
+   "searchQuery",
+   "researchQuery"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.jira",
+  "displayName": "Jira Software",
+  "version": "1",
+  "credentials": [
+   "jiraSoftwareCloudApi",
+   "jiraSoftwareServerApi",
+   "jiraSoftwareServerPatApi",
+   "jiraSoftwareCloudOAuth2Api",
+   "atlassianServiceAccountApi"
+  ],
+  "params": [
+   "jiraVersion",
+   "site",
+   "resource",
+   "operation",
+   "project",
+   "issueType",
+   "summary",
+   "additionalFields",
+   "issueKey",
+   "updateFields",
+   "deleteSubtasks",
+   "simplifyOutput",
+   "returnAll",
+   "limit",
+   "options",
+   "jsonParameters",
+   "notificationRecipientsUi",
+   "notificationRecipientsJson",
+   "notificationRecipientsRestrictionsUi",
+   "notificationRecipientsRestrictionsJson",
+   "binaryPropertyName",
+   "attachmentId",
+   "download",
+   "binaryProperty",
+   "comment",
+   "commentJson",
+   "commentId",
+   "userManagementScopeNotice",
+   "userManagementServiceAccountScopeNotice",
+   "username",
+   "emailAddress",
+   "displayName",
+   "accountId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.jiraTrigger",
+  "displayName": "Jira Trigger",
+  "version": "1.1",
+  "credentials": [
+   "jiraSoftwareCloudApi",
+   "jiraSoftwareServerApi",
+   "jiraSoftwareServerPatApi",
+   "jiraSoftwareCloudOAuth2Api",
+   "httpQueryAuth",
+   "httpQueryAuth"
+  ],
+  "params": [
+   "jiraVersion",
+   "authenticateWebhook",
+   "incomingAuthentication",
+   "events",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.jotFormTrigger",
+  "displayName": "Jotform Trigger",
+  "version": "1",
+  "credentials": [
+   "jotFormApi"
+  ],
+  "params": [
+   "form",
+   "resolveData",
+   "onlyAnswers"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.jwt",
+  "displayName": "JWT",
+  "version": "1",
+  "credentials": [
+   "jwtAuth"
+  ],
+  "params": [
+   "operation",
+   "useJson",
+   "claims",
+   "claimsJson",
+   "headerClaims",
+   "token",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.kafka",
+  "displayName": "Kafka",
+  "version": "2",
+  "credentials": [
+   "kafka",
+   "schemaRegistryApi"
+  ],
+  "params": [
+   "topic",
+   "sendInputData",
+   "message",
+   "jsonParameters",
+   "useSchemaRegistry",
+   "schemaRegistryUrl",
+   "useKey",
+   "key",
+   "eventName",
+   "headersUi",
+   "headerParametersJson",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.kafkaTrigger",
+  "displayName": "Kafka Trigger",
+  "version": "2",
+  "credentials": [
+   "kafka",
+   "schemaRegistryApi"
+  ],
+  "params": [
+   "topic",
+   "groupId",
+   "resolveOffset",
+   "allowedStatuses",
+   "useSchemaRegistry",
+   "schemaRegistryUrl",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.keap",
+  "displayName": "Keap",
+  "version": "1",
+  "credentials": [
+   "keapOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "companyName",
+   "additionalFields",
+   "addressesUi",
+   "faxesUi",
+   "phonesUi",
+   "returnAll",
+   "limit",
+   "options",
+   "duplicateOption",
+   "emailsUi",
+   "socialAccountsUi",
+   "contactId",
+   "userId",
+   "noteId",
+   "filters",
+   "tagIds",
+   "orderDate",
+   "orderTitle",
+   "orderType",
+   "addressUi",
+   "orderItemsUi",
+   "orderId",
+   "productName",
+   "productId",
+   "sentToAddress",
+   "sentFromAddress",
+   "contactIds",
+   "subject",
+   "attachmentsUi",
+   "binaryData",
+   "binaryPropertyName",
+   "fileAssociation",
+   "fileName",
+   "fileData",
+   "isPublic",
+   "fileId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.keapTrigger",
+  "displayName": "Keap Trigger",
+  "version": "1",
+  "credentials": [
+   "keapOAuth2Api"
+  ],
+  "params": [
+   "eventId",
+   "rawData"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.koBoToolbox",
+  "displayName": "KoBoToolbox",
+  "version": "1",
+  "credentials": [
+   "koBoToolboxApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "formId",
+   "returnAll",
+   "limit",
+   "options",
+   "filters",
+   "hookId",
+   "logId",
+   "status",
+   "startDate",
+   "endDate",
+   "submissionId",
+   "validationStatus",
+   "filterType",
+   "jsonNotice",
+   "filterJson",
+   "fileId",
+   "binaryPropertyName",
+   "download",
+   "fileMode",
+   "fileUrl"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.koBoToolboxTrigger",
+  "displayName": "KoBoToolbox Trigger",
+  "version": "1",
+  "credentials": [
+   "koBoToolboxApi"
+  ],
+  "params": [
+   "formId",
+   "triggerOn",
+   "formatOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.ldap",
+  "displayName": "Ldap",
+  "version": "1",
+  "credentials": [
+   "ldap"
+  ],
+  "params": [
+   "operation",
+   "nodeDebug",
+   "dn",
+   "id",
+   "value",
+   "targetDn",
+   "attributes",
+   "baseDN",
+   "searchFor",
+   "customFilter",
+   "attribute",
+   "searchText",
+   "returnAll",
+   "limit",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.lemlist",
+  "displayName": "Lemlist",
+  "version": "2",
+  "credentials": [
+   "lemlistApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "filters",
+   "campaignId",
+   "startDate",
+   "endDate",
+   "timezone",
+   "enrichId",
+   "leadId",
+   "findEmail",
+   "verifyEmail",
+   "linkedinEnrichment",
+   "findPhone",
+   "additionalFields",
+   "email"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.lemlistTrigger",
+  "displayName": "Lemlist Trigger",
+  "version": "1",
+  "credentials": [
+   "lemlistApi"
+  ],
+  "params": [
+   "event",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.limit",
+  "displayName": "Limit",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "maxItems",
+   "keep"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.line",
+  "displayName": "Line",
+  "version": "1",
+  "credentials": [
+   "lineNotifyOAuth2Api"
+  ],
+  "params": [
+   "notice",
+   "resource",
+   "operation",
+   "message",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.linear",
+  "displayName": "Linear",
+  "version": "1.1",
+  "credentials": [
+   "linearApi",
+   "linearOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "issueId",
+   "comment",
+   "additionalFields",
+   "teamId",
+   "title",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "link"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.linearTrigger",
+  "displayName": "Linear Trigger",
+  "version": "1",
+  "credentials": [
+   "linearApi",
+   "linearOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "notice",
+   "teamId",
+   "resources"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.lingvaNex",
+  "displayName": "LingvaNex",
+  "version": "1",
+  "credentials": [
+   "lingvaNexApi"
+  ],
+  "params": [
+   "operation",
+   "text",
+   "translateTo",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.linkedIn",
+  "displayName": "LinkedIn",
+  "version": "1",
+  "credentials": [
+   "linkedInOAuth2Api",
+   "linkedInCommunityManagementOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "postAs",
+   "person",
+   "organization",
+   "text",
+   "shareMediaCategory",
+   "binaryPropertyName",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.localFileTrigger",
+  "displayName": "Local File Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "triggerOn",
+   "path",
+   "events",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.loneScale",
+  "displayName": "LoneScale",
+  "version": "1",
+  "credentials": [
+   "loneScaleApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "type",
+   "list",
+   "first_name",
+   "last_name",
+   "company_name",
+   "peopleAdditionalFields",
+   "companyAdditionalFields",
+   "enrichmentType",
+   "firstName",
+   "lastName",
+   "enrichCompanyName",
+   "enrichCompanyDomain",
+   "detectJobChange",
+   "enrichAdditionalFields",
+   "sourceCompanyDomain",
+   "sourceCompanyName",
+   "sourceCompanyLinkedinUrl",
+   "personas",
+   "sourceAdditionalFields",
+   "searchDomain",
+   "searchLinkedinId",
+   "searchSlug",
+   "searchName",
+   "searchEnrich"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.loneScaleTrigger",
+  "displayName": "LoneScale Trigger",
+  "version": "1",
+  "credentials": [
+   "loneScaleApi"
+  ],
+  "params": [
+   "workflow"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.magento2",
+  "displayName": "Magento 2",
+  "version": "1",
+  "credentials": [
+   "magento2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email",
+   "firstname",
+   "lastname",
+   "additionalFields",
+   "customerId",
+   "firstName",
+   "lastName",
+   "website_id",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "filterType",
+   "matchType",
+   "filters",
+   "jsonNotice",
+   "filterJson",
+   "options",
+   "orderId",
+   "sku",
+   "name",
+   "attributeSetId",
+   "price"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailcheck",
+  "displayName": "Mailcheck",
+  "version": "1",
+  "credentials": [
+   "mailcheckApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailchimp",
+  "displayName": "Mailchimp",
+  "version": "1",
+  "credentials": [
+   "mailchimpApi",
+   "mailchimpOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "list",
+   "email",
+   "status",
+   "jsonParameters",
+   "options",
+   "locationFieldsUi",
+   "mergeFieldsUi",
+   "mergeFieldsJson",
+   "locationJson",
+   "groupsUi",
+   "groupJson",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "tags",
+   "groupCategory",
+   "campaignId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailchimpTrigger",
+  "displayName": "Mailchimp Trigger",
+  "version": "1",
+  "credentials": [
+   "mailchimpApi",
+   "mailchimpOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "list",
+   "events",
+   "sources"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailerLite",
+  "displayName": "MailerLite",
+  "version": "2",
+  "credentials": [
+   "mailerLiteApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email",
+   "subscriberId",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailerLiteTrigger",
+  "displayName": "MailerLite Trigger",
+  "version": "2",
+  "credentials": [
+   "mailerLiteApi"
+  ],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailgun",
+  "displayName": "Mailgun",
+  "version": "1",
+  "credentials": [
+   "mailgunApi"
+  ],
+  "params": [
+   "fromEmail",
+   "toEmail",
+   "ccEmail",
+   "bccEmail",
+   "replyTo",
+   "customHeaders",
+   "tags",
+   "subject",
+   "text",
+   "html",
+   "attachments"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailjet",
+  "displayName": "Mailjet",
+  "version": "1",
+  "credentials": [
+   "mailjetEmailApi",
+   "mailjetSmsApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "fromEmail",
+   "toEmail",
+   "subject",
+   "text",
+   "html",
+   "jsonParameters",
+   "additionalFields",
+   "variablesJson",
+   "variablesUi",
+   "templateId",
+   "from",
+   "to"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mailjetTrigger",
+  "displayName": "Mailjet Trigger",
+  "version": "1",
+  "credentials": [
+   "mailjetEmailApi"
+  ],
+  "params": [
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mandrill",
+  "displayName": "Mandrill",
+  "version": "1",
+  "credentials": [
+   "mandrillApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "template",
+   "fromEmail",
+   "toEmail",
+   "jsonParameters",
+   "options",
+   "mergeVarsJson",
+   "mergeVarsUi",
+   "metadataUi",
+   "metadataJson",
+   "attachmentsJson",
+   "attachmentsUi",
+   "headersJson",
+   "headersUi"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.manualTrigger",
+  "displayName": "Manual Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.markdown",
+  "displayName": "Markdown",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "mode",
+   "html",
+   "markdown",
+   "destinationKey",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.marketstack",
+  "displayName": "Marketstack",
+  "version": "1",
+  "credentials": [
+   "marketstackApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "symbols",
+   "returnAll",
+   "limit",
+   "filters",
+   "exchange",
+   "symbol"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.matrix",
+  "displayName": "Matrix",
+  "version": "1",
+  "credentials": [
+   "matrixApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "roomId",
+   "eventId",
+   "binaryPropertyName",
+   "mediaType",
+   "additionalFields",
+   "text",
+   "messageType",
+   "messageFormat",
+   "fallbackText",
+   "returnAll",
+   "limit",
+   "otherOptions",
+   "roomName",
+   "preset",
+   "roomAlias",
+   "roomIdOrAlias",
+   "userId",
+   "reason",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mattermost",
+  "displayName": "Mattermost",
+  "version": "1",
+  "credentials": [
+   "mattermostApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "teamId",
+   "displayName",
+   "channel",
+   "type",
+   "channelId",
+   "resolveData",
+   "returnAll",
+   "limit",
+   "userId",
+   "term",
+   "postId",
+   "message",
+   "attachments",
+   "otherOptions",
+   "emojiName",
+   "username",
+   "authService",
+   "authData",
+   "email",
+   "password",
+   "additionalFields",
+   "userIds",
+   "emails"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mautic",
+  "displayName": "Mautic",
+  "version": "1",
+  "credentials": [
+   "mauticApi",
+   "mauticOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "name",
+   "simple",
+   "additionalFields",
+   "companyId",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "jsonParameters",
+   "email",
+   "firstName",
+   "lastName",
+   "company",
+   "position",
+   "title",
+   "bodyJson",
+   "contactId",
+   "action",
+   "channel",
+   "points",
+   "options",
+   "campaignEmailId",
+   "segmentId",
+   "campaignId",
+   "segmentEmailId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mauticTrigger",
+  "displayName": "Mautic Trigger",
+  "version": "1",
+  "credentials": [
+   "mauticApi",
+   "mauticOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "events",
+   "eventsOrder"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.medium",
+  "displayName": "Medium",
+  "version": "1",
+  "credentials": [
+   "mediumApi",
+   "mediumOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "publication",
+   "publicationId",
+   "title",
+   "contentFormat",
+   "content",
+   "additionalFields",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.merge",
+  "displayName": "Merge",
+  "version": "3.2",
+  "credentials": [],
+  "params": [
+   "mode",
+   "combineBy",
+   "numberInputs",
+   "options",
+   "advanced",
+   "fieldsToMatchString",
+   "mergeByFields",
+   "joinMode",
+   "outputDataFrom",
+   "query",
+   "queryParametersNotice",
+   "chooseBranchMode",
+   "output",
+   "useDataOfInput"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.messageBird",
+  "displayName": "MessageBird",
+  "version": "1",
+  "credentials": [
+   "messageBirdApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "originator",
+   "recipients",
+   "message",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.metabase",
+  "displayName": "Metabase",
+  "version": "1",
+  "credentials": [
+   "metabaseApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "questionId",
+   "format",
+   "metricId",
+   "databaseId",
+   "engine",
+   "host",
+   "name",
+   "port",
+   "user",
+   "password",
+   "dbName",
+   "filePath",
+   "fullSync",
+   "simple",
+   "alertId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftDynamicsCrm",
+  "displayName": "Microsoft Dynamics CRM",
+  "version": "1",
+  "credentials": [
+   "microsoftDynamicsOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "accountId",
+   "returnAll",
+   "limit",
+   "options",
+   "filters",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftEntra",
+  "displayName": "Microsoft Entra ID",
+  "version": "1",
+  "credentials": [
+   "microsoftEntraOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "groupType",
+   "displayName",
+   "mailNickname",
+   "mailEnabled",
+   "membershipType",
+   "securityEnabled",
+   "additionalFields",
+   "group",
+   "output",
+   "fields",
+   "options",
+   "returnAll",
+   "limit",
+   "filter",
+   "updateFields",
+   "user",
+   "accountEnabled",
+   "userPrincipalName",
+   "password"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftExcel",
+  "displayName": "Microsoft Excel (OneDrive)",
+  "version": "2.2",
+  "credentials": [
+   "microsoftExcelOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "resourceTarget",
+   "userTarget",
+   "driveTarget",
+   "notice",
+   "resource",
+   "operation",
+   "workbook",
+   "worksheet",
+   "table",
+   "dataMode",
+   "data",
+   "fieldsUi",
+   "options",
+   "selectRange",
+   "range",
+   "hasHeaders",
+   "returnAll",
+   "limit",
+   "rawData",
+   "dataProperty",
+   "filters",
+   "lookupColumn",
+   "lookupValue",
+   "additionalFields",
+   "applyTo",
+   "useRange",
+   "keyRow",
+   "dataStartRow",
+   "columnToMatchOn",
+   "valueToMatchOn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftExcelSharePoint",
+  "displayName": "Microsoft Excel (SharePoint)",
+  "version": "1",
+  "credentials": [
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "workbook",
+   "site",
+   "library",
+   "worksheet",
+   "dataMode",
+   "data",
+   "fieldsUi",
+   "options",
+   "applyTo",
+   "useRange",
+   "range",
+   "keyRow",
+   "dataStartRow",
+   "returnAll",
+   "limit",
+   "columnToMatchOn",
+   "valueToMatchOn",
+   "table",
+   "rawData",
+   "dataProperty",
+   "lookupColumn",
+   "lookupValue",
+   "selectRange",
+   "hasHeaders",
+   "filter"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftGraphSecurity",
+  "displayName": "Microsoft Graph Security",
+  "version": "1",
+  "credentials": [
+   "microsoftGraphSecurityOAuth2Api",
+   "microsoftOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "secureScoreId",
+   "returnAll",
+   "limit",
+   "filters",
+   "secureScoreControlProfileId",
+   "provider",
+   "vendor",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftOneDrive",
+  "displayName": "Microsoft OneDrive",
+  "version": "1.1",
+  "credentials": [
+   "microsoftOneDriveOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "resourceTarget",
+   "userTarget",
+   "driveTarget",
+   "resource",
+   "operation",
+   "fileId",
+   "additionalFields",
+   "parentReference",
+   "binaryPropertyName",
+   "destinationFolderId",
+   "itemId",
+   "newName",
+   "searchUnsupportedNotice",
+   "query",
+   "shareServicePrincipalNotice",
+   "type",
+   "scope",
+   "fileName",
+   "parentId",
+   "binaryData",
+   "fileContent",
+   "name",
+   "options",
+   "folderId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftOneDriveTrigger",
+  "displayName": "Microsoft OneDrive Trigger",
+  "version": "1",
+  "credentials": [
+   "microsoftOneDriveOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "resourceTarget",
+   "userTarget",
+   "driveTarget",
+   "event",
+   "simple",
+   "watchFolder",
+   "watch",
+   "fileId",
+   "folderId",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftOutlook",
+  "displayName": "Microsoft Outlook",
+  "version": "2",
+  "credentials": [
+   "microsoftOutlookOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "mailbox",
+   "servicePrincipalNotice",
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "calendarId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "givenName",
+   "surname",
+   "contactId",
+   "output",
+   "fields",
+   "subject",
+   "bodyContent",
+   "draftId",
+   "options",
+   "to",
+   "startDateTime",
+   "endDateTime",
+   "eventId",
+   "fromAllCalendars",
+   "includeRecurringInstances",
+   "displayName",
+   "folderId",
+   "filtersNotice",
+   "filtersUI",
+   "messageId",
+   "replyToSenderOnly",
+   "message",
+   "toRecipients",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "binaryPropertyName",
+   "attachmentId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftOutlookTrigger",
+  "displayName": "Microsoft Outlook Trigger",
+  "version": "1",
+  "credentials": [
+   "microsoftOutlookOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "mailbox",
+   "servicePrincipalNotice",
+   "event",
+   "output",
+   "fields",
+   "filters",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftSharePoint",
+  "displayName": "Microsoft SharePoint",
+  "version": "2",
+  "credentials": [
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "site",
+   "folder",
+   "file",
+   "binaryPropertyName",
+   "fileName",
+   "changeFileContent",
+   "list",
+   "columns",
+   "item",
+   "simplify",
+   "filter",
+   "returnAll",
+   "limit",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftSql",
+  "displayName": "Microsoft SQL",
+  "version": "1.2",
+  "credentials": [
+   "microsoftSql"
+  ],
+  "params": [
+   "operation",
+   "query",
+   "options",
+   "table",
+   "columns",
+   "updateKey",
+   "deleteKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftTeams",
+  "displayName": "Microsoft Teams",
+  "version": "2",
+  "credentials": [
+   "microsoftTeamsOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "teamId",
+   "name",
+   "options",
+   "channelId",
+   "returnAll",
+   "limit",
+   "channelMessageCreateServicePrincipalNotice",
+   "channelMessageGetAllServicePrincipalNotice",
+   "contentType",
+   "message",
+   "messageId",
+   "chatMemberServicePrincipalNotice",
+   "chatId",
+   "chatMessageServicePrincipalNotice",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "onlineMeetingServicePrincipalNotice",
+   "subject",
+   "startDateTime",
+   "endDateTime",
+   "meetingId",
+   "groupId",
+   "planId",
+   "bucketId",
+   "title",
+   "taskId",
+   "tasksFor",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftTeamsTrigger",
+  "displayName": "Microsoft Teams Trigger",
+  "version": "1",
+  "credentials": [
+   "microsoftTeamsOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "event",
+   "chatTriggerServicePrincipalNotice",
+   "watchAllTeams",
+   "teamId",
+   "watchAllChannels",
+   "channelId",
+   "watchAllChats",
+   "chatId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.microsoftToDo",
+  "displayName": "Microsoft To Do",
+  "version": "1",
+  "credentials": [
+   "microsoftToDoOAuth2Api",
+   "microsoftOAuth2Api",
+   "microsoftEntraServicePrincipalApi"
+  ],
+  "params": [
+   "authentication",
+   "userTarget",
+   "resource",
+   "operation",
+   "taskListId",
+   "taskId",
+   "displayName",
+   "applicationName",
+   "additionalFields",
+   "linkedResourceId",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "title",
+   "listId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mindee",
+  "displayName": "Mindee",
+  "version": "3",
+  "credentials": [
+   "mindeeReceiptApi",
+   "mindeeInvoiceApi"
+  ],
+  "params": [
+   "apiVersion",
+   "resource",
+   "operation",
+   "binaryPropertyName",
+   "rawData"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.misp",
+  "displayName": "MISP",
+  "version": "1",
+  "credentials": [
+   "mispApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "eventId",
+   "type",
+   "value",
+   "additionalFields",
+   "attributeId",
+   "returnAll",
+   "limit",
+   "useJson",
+   "jsonOutput",
+   "updateFields",
+   "org_id",
+   "information",
+   "tagId",
+   "name",
+   "provider",
+   "url",
+   "feedId",
+   "galaxyId",
+   "noticelistId",
+   "organisationId",
+   "email",
+   "role_id",
+   "userId",
+   "warninglistId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mistralAi",
+  "displayName": "Mistral AI",
+  "version": "1",
+  "credentials": [
+   "mistralCloudApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "model",
+   "documentType",
+   "inputType",
+   "binaryProperty",
+   "url",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mocean",
+  "displayName": "Mocean",
+  "version": "1",
+  "credentials": [
+   "moceanApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "from",
+   "to",
+   "language",
+   "message",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mondayCom",
+  "displayName": "Monday.com",
+  "version": "1",
+  "credentials": [
+   "mondayComApi",
+   "mondayComOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "boardId",
+   "name",
+   "kind",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "title",
+   "columnType",
+   "groupId",
+   "itemId",
+   "value",
+   "columnId",
+   "columnValues",
+   "columnValue"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mongoDb",
+  "displayName": "MongoDB",
+  "version": "1.5",
+  "credentials": [
+   "mongoDb"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "collection",
+   "query",
+   "options",
+   "queryParameters",
+   "fields",
+   "updateKey",
+   "upsert",
+   "indexName",
+   "indexNameRequired",
+   "indexDefinition",
+   "indexDefinitionParameters",
+   "indexType"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.monicaCrm",
+  "displayName": "Monica CRM",
+  "version": "1",
+  "credentials": [
+   "monicaCrmApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "activityTypeId",
+   "contacts",
+   "happenedAt",
+   "summary",
+   "additionalFields",
+   "activityId",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "contactId",
+   "calledAt",
+   "content",
+   "callId",
+   "firstName",
+   "genderId",
+   "filters",
+   "contactFieldTypeId",
+   "data",
+   "contactFieldId",
+   "tagsToAdd",
+   "tagsToRemove",
+   "conversationId",
+   "writtenAt",
+   "writtenByMe",
+   "messageId",
+   "title",
+   "post",
+   "journalId",
+   "body",
+   "noteId",
+   "frequencyType",
+   "frequencyNumber",
+   "initialDate",
+   "reminderId",
+   "name",
+   "tagId",
+   "taskId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.moveBinaryData",
+  "displayName": "Convert to/from binary data",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "mode",
+   "setAllData",
+   "sourceKey",
+   "destinationKey",
+   "convertAllData",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mqtt",
+  "displayName": "MQTT",
+  "version": "1",
+  "credentials": [
+   "mqtt"
+  ],
+  "params": [
+   "topic",
+   "sendInputData",
+   "message",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mqttTrigger",
+  "displayName": "MQTT Trigger",
+  "version": "1",
+  "credentials": [
+   "mqtt"
+  ],
+  "params": [
+   "topics",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.msg91",
+  "displayName": "MSG91",
+  "version": "1",
+  "credentials": [
+   "msg91Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "from",
+   "to",
+   "message"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.mySql",
+  "displayName": "MySQL",
+  "version": "2.5",
+  "credentials": [
+   "mySql"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "table",
+   "deleteCommand",
+   "where",
+   "combineConditions",
+   "options",
+   "query",
+   "dataMode",
+   "notice",
+   "valuesToSend",
+   "returnAll",
+   "limit",
+   "sort",
+   "columnToMatchOn",
+   "valueToMatchOn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.n8n",
+  "displayName": "n8n",
+  "version": "1",
+  "credentials": [
+   "n8nApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "additionalOptions",
+   "name",
+   "credentialTypeName",
+   "data",
+   "credentialId",
+   "executionId",
+   "returnAll",
+   "limit",
+   "filters",
+   "options",
+   "workflowId",
+   "additionalFields",
+   "workflowObject",
+   "versionId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+  "displayName": "Customer Datastore (n8n training)",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.n8nTrainingCustomerMessenger",
+  "displayName": "Customer Messenger (n8n training)",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "customerId",
+   "message"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.n8nTrigger",
+  "displayName": "n8n Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.nasa",
+  "displayName": "NASA",
+  "version": "1",
+  "credentials": [
+   "nasaApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "asteroidId",
+   "additionalFields",
+   "download",
+   "binaryPropertyName",
+   "lat",
+   "lon",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.netlify",
+  "displayName": "Netlify",
+  "version": "1",
+  "credentials": [
+   "netlifyApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "siteId",
+   "deployId",
+   "returnAll",
+   "limit",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.netlifyTrigger",
+  "displayName": "Netlify Trigger",
+  "version": "1",
+  "credentials": [
+   "netlifyApi"
+  ],
+  "params": [
+   "siteId",
+   "event",
+   "formId",
+   "simple"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.nextCloud",
+  "displayName": "Nextcloud",
+  "version": "1",
+  "credentials": [
+   "nextCloudApi",
+   "nextCloudOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "path",
+   "toPath",
+   "binaryPropertyName",
+   "binaryDataUpload",
+   "fileContent",
+   "shareType",
+   "circleId",
+   "email",
+   "groupId",
+   "user",
+   "options",
+   "userId",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.nocoDb",
+  "displayName": "NocoDB",
+  "version": "4",
+  "credentials": [
+   "nocoDb",
+   "nocoDbApiToken"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "workspaceId",
+   "projectId",
+   "table",
+   "options",
+   "id",
+   "downloadAttachments",
+   "downloadFieldNames",
+   "returnAll",
+   "limit",
+   "dataToSend",
+   "info",
+   "inputsToIgnore",
+   "fieldsMapper",
+   "uploadMode",
+   "uploadFieldName",
+   "filename",
+   "contentType",
+   "base64value",
+   "url",
+   "linkFieldName",
+   "linkId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.notion",
+  "displayName": "Notion",
+  "version": "3",
+  "credentials": [
+   "notionApi",
+   "notionOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "notionNotice",
+   "Credentials",
+   "resource",
+   "operation",
+   "blockId",
+   "afterBlockId",
+   "blockUi",
+   "includeTranscript",
+   "returnAll",
+   "limit",
+   "fetchNestedBlocks",
+   "simplifyOutput",
+   "dataSourceId",
+   "text",
+   "simple",
+   "options",
+   "databaseId",
+   "pageId",
+   "title",
+   "propertiesUi",
+   "contentType",
+   "blocksJson",
+   "markdown",
+   "filterType",
+   "matchType",
+   "filters",
+   "jsonNotice",
+   "filterJson",
+   "markdownUpdateType",
+   "contentUpdates",
+   "userId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.notionTrigger",
+  "displayName": "Notion Trigger",
+  "version": "1.1",
+  "credentials": [
+   "notionApi",
+   "notionOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "event",
+   "notionNotice",
+   "databaseId",
+   "dataSourceId",
+   "simple"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.npm",
+  "displayName": "Npm",
+  "version": "1",
+  "credentials": [
+   "npmApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "packageName",
+   "packageVersion",
+   "query",
+   "limit",
+   "offset",
+   "distTagName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.odoo",
+  "displayName": "Odoo",
+  "version": "2",
+  "credentials": [
+   "odooApiKeyApi",
+   "odooApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "res_model",
+   "res_id",
+   "activity_type_id",
+   "additionalFields",
+   "activityId",
+   "options",
+   "returnAll",
+   "limit",
+   "filters",
+   "fieldsToSend",
+   "contactId",
+   "customResource",
+   "recordId",
+   "opportunityId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.okta",
+  "displayName": "Okta",
+  "version": "1",
+  "credentials": [
+   "oktaApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "userId",
+   "firstName",
+   "lastName",
+   "login",
+   "email",
+   "activate",
+   "getCreateFields",
+   "getUpdateFields",
+   "searchQuery",
+   "limit",
+   "returnAll",
+   "simplify",
+   "sendEmail"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.oneSimpleApi",
+  "displayName": "One Simple API",
+  "version": "1",
+  "credentials": [
+   "oneSimpleApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "link",
+   "download",
+   "output",
+   "options",
+   "message",
+   "profileName",
+   "artistName",
+   "value",
+   "fromCurrency",
+   "toCurrency",
+   "emailAddress"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.onfleet",
+  "displayName": "Onfleet",
+  "version": "1",
+  "credentials": [
+   "onfleetApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "id",
+   "returnAll",
+   "limit",
+   "name",
+   "email",
+   "additionalFields",
+   "updateFields",
+   "containerType",
+   "containerId",
+   "type",
+   "index",
+   "tasks",
+   "options",
+   "unparsed",
+   "address",
+   "addressNumber",
+   "addressStreet",
+   "addressCity",
+   "addressCountry",
+   "destination",
+   "getBy",
+   "phone",
+   "recipientName",
+   "recipientPhone",
+   "success",
+   "filters",
+   "overrideFields",
+   "workers",
+   "managers",
+   "byLocation",
+   "teams",
+   "longitude",
+   "latitude",
+   "schedule"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.onfleetTrigger",
+  "displayName": "Onfleet Trigger",
+  "version": "1",
+  "credentials": [
+   "onfleetApi"
+  ],
+  "params": [
+   "triggerOn",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.openAi",
+  "displayName": "OpenAI",
+  "version": "1.1",
+  "credentials": [
+   "openAiApi"
+  ],
+  "params": [
+   "oldVersionNotice",
+   "resource",
+   "operation",
+   "model",
+   "chatModel",
+   "prompt",
+   "simplifyOutput",
+   "options",
+   "imageModel",
+   "responseFormat",
+   "input",
+   "instruction"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.openThesaurus",
+  "displayName": "OpenThesaurus",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "operation",
+   "text",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.openWeatherMap",
+  "displayName": "OpenWeatherMap",
+  "version": "1",
+  "credentials": [
+   "openWeatherMapApi"
+  ],
+  "params": [
+   "operation",
+   "format",
+   "locationSelection",
+   "cityName",
+   "cityId",
+   "latitude",
+   "longitude",
+   "zipCode",
+   "language"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.oracleDatabase",
+  "displayName": "Oracle Database",
+  "version": "1.1",
+  "credentials": [
+   "oracleDBApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "schema",
+   "table",
+   "deleteCommand",
+   "where",
+   "combineConditions",
+   "options",
+   "stmtBatchingNotice",
+   "query",
+   "columns",
+   "returnAll",
+   "limit",
+   "sort"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.orbit",
+  "displayName": "Orbit",
+  "version": "1",
+  "credentials": [
+   "orbitApi"
+  ],
+  "params": [
+   "deprecated",
+   "resource",
+   "operation",
+   "workspaceId",
+   "memberId",
+   "title",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "filters",
+   "resolveIdentities",
+   "options",
+   "source",
+   "searchBy",
+   "id",
+   "username",
+   "email",
+   "host",
+   "updateFields",
+   "identityUi",
+   "note",
+   "resolveMember",
+   "noteId",
+   "url",
+   "postId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.oura",
+  "displayName": "Oura",
+  "version": "1",
+  "credentials": [
+   "ouraApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.paddle",
+  "displayName": "Paddle",
+  "version": "1",
+  "credentials": [
+   "paddleApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "couponType",
+   "productIds",
+   "discountType",
+   "discountAmount",
+   "currency",
+   "jsonParameters",
+   "additionalFieldsJson",
+   "additionalFields",
+   "productId",
+   "returnAll",
+   "limit",
+   "updateBy",
+   "couponCode",
+   "group",
+   "paymentId",
+   "date",
+   "planId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pagerDuty",
+  "displayName": "PagerDuty",
+  "version": "1",
+  "credentials": [
+   "pagerDutyApi",
+   "pagerDutyOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "title",
+   "serviceId",
+   "email",
+   "additionalFields",
+   "conferenceBridgeUi",
+   "incidentId",
+   "returnAll",
+   "limit",
+   "options",
+   "updateFields",
+   "content",
+   "logEntryId",
+   "userId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.payPal",
+  "displayName": "PayPal",
+  "version": "1",
+  "credentials": [
+   "payPalApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "senderBatchId",
+   "jsonParameters",
+   "itemsUi",
+   "itemsJson",
+   "additionalFields",
+   "payoutBatchId",
+   "returnAll",
+   "limit",
+   "payoutItemId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.payPalTrigger",
+  "displayName": "PayPal Trigger",
+  "version": "1",
+  "credentials": [
+   "payPalApi"
+  ],
+  "params": [
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.peekalink",
+  "displayName": "Peekalink",
+  "version": "1",
+  "credentials": [
+   "peekalinkApi"
+  ],
+  "params": [
+   "operation",
+   "url"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.phantombuster",
+  "displayName": "Phantombuster",
+  "version": "1",
+  "credentials": [
+   "phantombusterApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "agentId",
+   "returnAll",
+   "limit",
+   "resolveData",
+   "additionalFields",
+   "jsonParameters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.philipsHue",
+  "displayName": "Philips Hue",
+  "version": "1",
+  "credentials": [
+   "philipsHueOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "lightId",
+   "returnAll",
+   "limit",
+   "on",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pipedrive",
+  "displayName": "Pipedrive",
+  "version": "2",
+  "credentials": [
+   "pipedriveApi",
+   "pipedriveOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "subject",
+   "done",
+   "type",
+   "additionalFields",
+   "rawCustomFieldKeys",
+   "activityId",
+   "rawCustomFieldOutput",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "title",
+   "associateWith",
+   "org_id",
+   "person_id",
+   "dealId",
+   "term",
+   "exactMatch",
+   "productId",
+   "item_price",
+   "quantity",
+   "productAttachmentId",
+   "binaryPropertyName",
+   "fileId",
+   "organization_id",
+   "leadId",
+   "content",
+   "noteId",
+   "name",
+   "organizationId",
+   "personId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pipedriveTrigger",
+  "displayName": "Pipedrive Trigger",
+  "version": "1.1",
+  "credentials": [
+   "pipedriveApi",
+   "pipedriveOAuth2Api",
+   "httpBasicAuth"
+  ],
+  "params": [
+   "authentication",
+   "incomingAuthentication",
+   "action",
+   "entity",
+   "object"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.plivo",
+  "displayName": "Plivo",
+  "version": "1",
+  "credentials": [
+   "plivoApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "from",
+   "to",
+   "message",
+   "media_urls",
+   "answer_method",
+   "answer_url"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.postBin",
+  "displayName": "PostBin",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "resource",
+   "operation",
+   "binId",
+   "binContent",
+   "requestId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.postgres",
+  "displayName": "Postgres",
+  "version": "2.7",
+  "credentials": [
+   "postgres"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "schema",
+   "table",
+   "deleteCommand",
+   "restartSequences",
+   "where",
+   "combineConditions",
+   "options",
+   "query",
+   "dataMode",
+   "notice",
+   "valuesToSend",
+   "columns",
+   "returnAll",
+   "limit",
+   "sort",
+   "columnToMatchOn",
+   "valueToMatchOn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.postgresTrigger",
+  "displayName": "Postgres Trigger",
+  "version": "1",
+  "credentials": [
+   "postgres"
+  ],
+  "params": [
+   "triggerMode",
+   "schema",
+   "tableName",
+   "channelName",
+   "firesOn",
+   "additionalFields",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.postHog",
+  "displayName": "PostHog",
+  "version": "1",
+  "credentials": [
+   "postHogApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "alias",
+   "distinctId",
+   "additionalFields",
+   "eventName",
+   "name"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.postmarkTrigger",
+  "displayName": "Postmark Trigger",
+  "version": "1",
+  "credentials": [
+   "postmarkApi"
+  ],
+  "params": [
+   "events",
+   "firstOpen",
+   "includeContent"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.profitWell",
+  "displayName": "ProfitWell",
+  "version": "1",
+  "credentials": [
+   "profitWellApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "type",
+   "month",
+   "simple",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pushbullet",
+  "displayName": "Pushbullet",
+  "version": "1",
+  "credentials": [
+   "pushbulletOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "type",
+   "title",
+   "body",
+   "url",
+   "binaryPropertyName",
+   "target",
+   "value",
+   "pushId",
+   "returnAll",
+   "limit",
+   "filters",
+   "dismissed"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pushcut",
+  "displayName": "Pushcut",
+  "version": "1",
+  "credentials": [
+   "pushcutApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "notificationName",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pushcutTrigger",
+  "displayName": "Pushcut Trigger",
+  "version": "1",
+  "credentials": [
+   "pushcutApi"
+  ],
+  "params": [
+   "actionName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.pushover",
+  "displayName": "Pushover",
+  "version": "1",
+  "credentials": [
+   "pushoverApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "userKey",
+   "message",
+   "priority",
+   "retry",
+   "expire",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.questDb",
+  "displayName": "QuestDB",
+  "version": "1.1",
+  "credentials": [
+   "questDb"
+  ],
+  "params": [
+   "operation",
+   "query",
+   "schema",
+   "table",
+   "columns",
+   "returnFields",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.quickbase",
+  "displayName": "Quick Base",
+  "version": "1",
+  "credentials": [
+   "quickbaseApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "tableId",
+   "returnAll",
+   "limit",
+   "options",
+   "recordId",
+   "fieldId",
+   "versionNumber",
+   "binaryPropertyName",
+   "columns",
+   "simple",
+   "where",
+   "updateKey",
+   "mergeFieldId",
+   "reportId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.quickbooks",
+  "displayName": "QuickBooks Online",
+  "version": "1",
+  "credentials": [
+   "quickBooksOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "VendorRef",
+   "Line",
+   "additionalFields",
+   "billId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "displayName",
+   "customerId",
+   "FamilyName",
+   "GivenName",
+   "employeeId",
+   "CustomerRef",
+   "estimateId",
+   "download",
+   "binaryProperty",
+   "fileName",
+   "email",
+   "invoiceId",
+   "itemId",
+   "TotalAmt",
+   "paymentId",
+   "purchaseId",
+   "simple",
+   "vendorId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.quickChart",
+  "displayName": "QuickChart",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "chartType",
+   "labelsMode",
+   "labelsUi",
+   "labelsArray",
+   "data",
+   "output",
+   "chartOptions",
+   "datasetOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.rabbitmq",
+  "displayName": "RabbitMQ",
+  "version": "1.2",
+  "credentials": [
+   "rabbitmq"
+  ],
+  "params": [
+   "operation",
+   "deleteMessage",
+   "mode",
+   "queue",
+   "exchange",
+   "exchangeType",
+   "routingKey",
+   "sendInputData",
+   "message",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.rabbitmqTrigger",
+  "displayName": "RabbitMQ Trigger",
+  "version": "1",
+  "credentials": [
+   "rabbitmq"
+  ],
+  "params": [
+   "queue",
+   "options",
+   "laterMessageNode"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.raindrop",
+  "displayName": "Raindrop",
+  "version": "1",
+  "credentials": [
+   "raindropOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "collectionId",
+   "link",
+   "additionalFields",
+   "bookmarkId",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "title",
+   "type",
+   "tags",
+   "filters",
+   "self",
+   "userId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.readBinaryFile",
+  "displayName": "Read Binary File",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "filePath",
+   "dataPropertyName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.readBinaryFiles",
+  "displayName": "Read Binary Files",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "fileSelector",
+   "dataPropertyName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.readPDF",
+  "displayName": "Read PDF",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "binaryPropertyName",
+   "encrypted",
+   "password"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.readWriteFile",
+  "displayName": "Read/Write Files from Disk",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "info",
+   "operation",
+   "cloudNotice",
+   "fileSelector",
+   "options",
+   "fileName",
+   "dataPropertyName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.reddit",
+  "displayName": "Reddit",
+  "version": "1",
+  "credentials": [
+   "redditOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "postId",
+   "commentText",
+   "subreddit",
+   "returnAll",
+   "limit",
+   "commentId",
+   "replyText",
+   "details",
+   "content",
+   "filters",
+   "kind",
+   "title",
+   "url",
+   "text",
+   "resubmit",
+   "location",
+   "keyword",
+   "additionalFields",
+   "username"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.redis",
+  "displayName": "Redis",
+  "version": "1",
+  "credentials": [
+   "redis"
+  ],
+  "params": [
+   "operation",
+   "key",
+   "propertyName",
+   "keyType",
+   "options",
+   "expire",
+   "ttl",
+   "keyPattern",
+   "getValues",
+   "list",
+   "value",
+   "valueIsJSON",
+   "channel",
+   "messageData",
+   "tail"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.redisTrigger",
+  "displayName": "Redis Trigger",
+  "version": "1",
+  "credentials": [
+   "redis"
+  ],
+  "params": [
+   "channels",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.removeDuplicates",
+  "displayName": "Remove Duplicates",
+  "version": "2",
+  "credentials": [],
+  "params": [
+   "operation",
+   "compare",
+   "fieldsToExclude",
+   "fieldsToCompare",
+   "logic",
+   "dedupeValue",
+   "incrementalDedupeValue",
+   "dateDedupeValue",
+   "mode",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.renameKeys",
+  "displayName": "Rename Keys",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "keys",
+   "additionalOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.respondToWebhook",
+  "displayName": "Respond to Webhook",
+  "version": "1.5",
+  "credentials": [
+   "jwtAuth"
+  ],
+  "params": [
+   "enableResponseOutput",
+   "generalNotice",
+   "respondWith",
+   "credentials",
+   "webhookNotice",
+   "redirectURL",
+   "responseBody",
+   "payload",
+   "responseDataSource",
+   "inputFieldName",
+   "contentTypeNotice",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.rocketchat",
+  "displayName": "RocketChat",
+  "version": "1",
+  "credentials": [
+   "rocketchatApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "roomId",
+   "returnAll",
+   "limit",
+   "channel",
+   "text",
+   "jsonParameters",
+   "options",
+   "attachments",
+   "attachmentsJson"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.rssFeedRead",
+  "displayName": "RSS Read",
+  "version": "1.2",
+  "credentials": [],
+  "params": [
+   "url",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.rssFeedReadTrigger",
+  "displayName": "RSS Feed Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "feedUrl"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.rundeck",
+  "displayName": "Rundeck",
+  "version": "1.1",
+  "credentials": [
+   "rundeckApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "jobid",
+   "arguments",
+   "filter"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.s3",
+  "displayName": "S3",
+  "version": "1",
+  "credentials": [
+   "s3"
+  ],
+  "params": [
+   "s3StandardNotice",
+   "resource",
+   "operation",
+   "name",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "bucketName",
+   "folderName",
+   "folderKey",
+   "options",
+   "sourcePath",
+   "destinationPath",
+   "fileName",
+   "binaryData",
+   "fileContent",
+   "binaryPropertyName",
+   "tagsUi",
+   "fileKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.salesforce",
+  "displayName": "Salesforce",
+  "version": "1.1",
+  "credentials": [
+   "salesforceOAuth2Api",
+   "salesforceJwtApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "externalId",
+   "externalIdValue",
+   "company",
+   "lastname",
+   "additionalFields",
+   "leadId",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "options",
+   "campaignId",
+   "title",
+   "contactId",
+   "customObject",
+   "customFieldsUi",
+   "recordId",
+   "binaryPropertyName",
+   "name",
+   "closeDate",
+   "stageName",
+   "opportunityId",
+   "accountId",
+   "query",
+   "type",
+   "caseId",
+   "status",
+   "taskId",
+   "parentId",
+   "attachmentId",
+   "userId",
+   "apiName",
+   "jsonParameters",
+   "variablesJson",
+   "variablesUi"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.salesforceTrigger",
+  "displayName": "Salesforce Trigger",
+  "version": "1.1",
+  "credentials": [
+   "salesforceOAuth2Api",
+   "salesforceJwtApi"
+  ],
+  "params": [
+   "authentication",
+   "triggerOn",
+   "customObject"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.salesmate",
+  "displayName": "Salesmate",
+  "version": "1",
+  "credentials": [
+   "salesmateApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "owner",
+   "rawData",
+   "additionalFields",
+   "id",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "jsonParameters",
+   "options",
+   "filtersJson",
+   "filters",
+   "title",
+   "type",
+   "primaryContact",
+   "pipeline",
+   "status",
+   "stage",
+   "currency"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.scheduleTrigger",
+  "displayName": "Schedule Trigger",
+  "version": "1.4",
+  "credentials": [],
+  "params": [
+   "notice",
+   "rule",
+   "misfirePolicy",
+   "misfireGraceSeconds",
+   "skipDurableScheduler"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.seaTable",
+  "displayName": "SeaTable",
+  "version": "2",
+  "credentials": [
+   "seaTableApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "tableName",
+   "rowId",
+   "fieldsToSend",
+   "apply_default",
+   "notice",
+   "inputsToIgnore",
+   "columnsUi",
+   "bigdata",
+   "options",
+   "viewName",
+   "searchColumn",
+   "searchTerm",
+   "searchString",
+   "linkColumn",
+   "linkColumnSourceId",
+   "linkColumnTargetId",
+   "uploadColumn",
+   "dataPropertyName",
+   "assetPath"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.securityScorecard",
+  "displayName": "SecurityScorecard",
+  "version": "1",
+  "credentials": [
+   "securityScorecardApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "scorecardIdentifier",
+   "score",
+   "returnAll",
+   "limit",
+   "simple",
+   "filters",
+   "options",
+   "industry",
+   "email",
+   "firstName",
+   "lastName",
+   "message",
+   "additionalFields",
+   "portfolioId",
+   "name",
+   "description",
+   "privacy",
+   "domain",
+   "report",
+   "branding",
+   "date",
+   "url",
+   "binaryPropertyName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.segment",
+  "displayName": "Segment",
+  "version": "1",
+  "credentials": [
+   "segmentApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "userId",
+   "groupId",
+   "traits",
+   "context",
+   "integrations",
+   "event",
+   "properties",
+   "name"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sendGrid",
+  "displayName": "SendGrid",
+  "version": "1",
+  "credentials": [
+   "sendGridApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "name",
+   "listId",
+   "deleteContacts",
+   "contactSample",
+   "filters",
+   "email",
+   "additionalFields",
+   "ids",
+   "deleteAll",
+   "by",
+   "contactId",
+   "fromEmail",
+   "fromName",
+   "toEmail",
+   "subject",
+   "dynamicTemplate",
+   "contentType",
+   "contentValue",
+   "templateId",
+   "dynamicTemplateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sendInBlue",
+  "displayName": "Brevo",
+  "version": "1",
+  "credentials": [
+   "sendInBlueApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "attributeCategory",
+   "attributeName",
+   "attributeType",
+   "attributeValue",
+   "attributeCategoryList",
+   "updateAttributeCategory",
+   "updateAttributeName",
+   "updateAttributeValue",
+   "updateAttributeCategoryList",
+   "deleteAttributeCategory",
+   "deleteAttributeName",
+   "returnAll",
+   "limit",
+   "name",
+   "email",
+   "id",
+   "createContactAttributes",
+   "options",
+   "filters",
+   "identifier",
+   "updateAttributes",
+   "upsertAttributes",
+   "sendHTML",
+   "subject",
+   "textContent",
+   "htmlContent",
+   "sender",
+   "receipients",
+   "additionalFields",
+   "templateId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sendInBlueTrigger",
+  "displayName": "Brevo Trigger",
+  "version": "1",
+  "credentials": [
+   "sendInBlueApi"
+  ],
+  "params": [
+   "type",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sendy",
+  "displayName": "Sendy",
+  "version": "1",
+  "credentials": [
+   "sendyApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "fromName",
+   "fromEmail",
+   "replyTo",
+   "title",
+   "subject",
+   "htmlText",
+   "sendCampaign",
+   "brandId",
+   "additionalFields",
+   "email",
+   "listId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sentryIo",
+  "displayName": "Sentry.io",
+  "version": "1",
+  "credentials": [
+   "sentryIoOAuth2Api",
+   "sentryIoApi",
+   "sentryIoServerApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "organizationSlug",
+   "projectSlug",
+   "full",
+   "returnAll",
+   "limit",
+   "eventId",
+   "issueId",
+   "additionalFields",
+   "name",
+   "agreeTerms",
+   "organization_slug",
+   "updateFields",
+   "teamSlug",
+   "version",
+   "url",
+   "projects"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.serviceNow",
+  "displayName": "ServiceNow",
+  "version": "1",
+  "credentials": [
+   "serviceNowOAuth2Api",
+   "serviceNowBasicApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "tableName",
+   "id",
+   "inputDataFieldName",
+   "options",
+   "attachmentId",
+   "returnAll",
+   "limit",
+   "download",
+   "outputField",
+   "short_description",
+   "additionalFields",
+   "updateFields",
+   "dataToSend",
+   "inputsToIgnore",
+   "fieldsToSend",
+   "getOption",
+   "user_name"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.set",
+  "displayName": "Edit Fields (Set)",
+  "version": "3.5",
+  "credentials": [],
+  "params": [
+   "mode",
+   "duplicateItem",
+   "duplicateCount",
+   "duplicateWarning",
+   "jsonOutput",
+   "fields",
+   "assignments",
+   "include",
+   "includeOtherFields",
+   "includeFields",
+   "excludeFields",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.shopify",
+  "displayName": "Shopify",
+  "version": "1",
+  "credentials": [
+   "shopifyApi",
+   "shopifyAccessTokenApi",
+   "shopifyOAuth2Api"
+  ],
+  "params": [
+   "apiVersion",
+   "authentication",
+   "resource",
+   "operation",
+   "additionalFields",
+   "limeItemsUi",
+   "orderId",
+   "options",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "title",
+   "productId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.shopifyTrigger",
+  "displayName": "Shopify Trigger",
+  "version": "1",
+  "credentials": [
+   "shopifyApi",
+   "shopifyAccessTokenApi",
+   "shopifyOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "topic"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.signl4",
+  "displayName": "SIGNL4",
+  "version": "1",
+  "credentials": [
+   "signl4Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "message",
+   "additionalFields",
+   "externalId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.simulate",
+  "displayName": "Simulate",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "icon",
+   "subtitle",
+   "output",
+   "numberOfItems",
+   "jsonOutput",
+   "executionDuration"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.simulateTrigger",
+  "displayName": "Simulate Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "icon",
+   "subtitle",
+   "jsonOutput",
+   "executionDuration"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.slackTrigger",
+  "displayName": "Slack Trigger",
+  "version": "1",
+  "credentials": [
+   "slackApi"
+  ],
+  "params": [
+   "authentication",
+   "notice",
+   "trigger",
+   "watchWorkspace",
+   "channelId",
+   "downloadFiles",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sms77",
+  "displayName": "seven",
+  "version": "1",
+  "credentials": [
+   "sms77Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "from",
+   "to",
+   "message",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.snowflake",
+  "displayName": "Snowflake",
+  "version": "1.1",
+  "credentials": [
+   "snowflake",
+   "snowflakeOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "operation",
+   "query",
+   "options",
+   "table",
+   "columns",
+   "updateKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sort",
+  "displayName": "Sort",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "type",
+   "sortFieldsUi",
+   "code",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.splitInBatches",
+  "displayName": "Loop Over Items (Split in Batches)",
+  "version": "3",
+  "credentials": [],
+  "params": [
+   "splitInBatchesNotice",
+   "batchSize",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.splitOut",
+  "displayName": "Split Out",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "fieldToSplitOut",
+   "include",
+   "fieldsToInclude",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.splunk",
+  "displayName": "Splunk",
+  "version": "2",
+  "credentials": [
+   "splunkApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "searchJobId",
+   "name",
+   "reportId",
+   "returnAll",
+   "limit",
+   "options",
+   "search",
+   "additionalFields",
+   "sort",
+   "filters",
+   "roles",
+   "password",
+   "userId",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.spotify",
+  "displayName": "Spotify",
+  "version": "1",
+  "credentials": [
+   "spotifyOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "id",
+   "query",
+   "country",
+   "name",
+   "additionalFields",
+   "trackID",
+   "returnAll",
+   "limit",
+   "volumePercent",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.sseTrigger",
+  "displayName": "SSE Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "url"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.ssh",
+  "displayName": "SSH",
+  "version": "1",
+  "credentials": [
+   "sshPassword",
+   "sshPrivateKey"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "command",
+   "cwd",
+   "binaryPropertyName",
+   "path",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.stackby",
+  "displayName": "Stackby",
+  "version": "1",
+  "credentials": [
+   "stackbyApi"
+  ],
+  "params": [
+   "operation",
+   "stackId",
+   "table",
+   "id",
+   "returnAll",
+   "limit",
+   "additionalFields",
+   "columns"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.stickyNote",
+  "displayName": "Sticky Note",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "content",
+   "height",
+   "width",
+   "color"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.stopAndError",
+  "displayName": "Stop and Error",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "errorType",
+   "errorMessage",
+   "errorObject"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.storyblok",
+  "displayName": "Storyblok",
+  "version": "1",
+  "credentials": [
+   "storyblokContentApi",
+   "storyblokManagementApi"
+  ],
+  "params": [
+   "source",
+   "resource",
+   "operation",
+   "identifier",
+   "returnAll",
+   "limit",
+   "filters",
+   "space",
+   "storyId",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.strapi",
+  "displayName": "Strapi",
+  "version": "1",
+  "credentials": [
+   "strapiApi",
+   "strapiTokenApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "contentType",
+   "columns",
+   "entryId",
+   "returnAll",
+   "limit",
+   "options",
+   "updateKey"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.strava",
+  "displayName": "Strava",
+  "version": "1.1",
+  "credentials": [
+   "stravaOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "name",
+   "type",
+   "sport_type",
+   "startDate",
+   "elapsedTime",
+   "additionalFields",
+   "activityId",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "keys"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.stravaTrigger",
+  "displayName": "Strava Trigger",
+  "version": "1",
+  "credentials": [
+   "stravaOAuth2Api"
+  ],
+  "params": [
+   "object",
+   "event",
+   "resolveData",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.stripe",
+  "displayName": "Stripe",
+  "version": "1",
+  "credentials": [
+   "stripeApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "customerId",
+   "token",
+   "cardId",
+   "sourceId",
+   "amount",
+   "currency",
+   "source",
+   "additionalFields",
+   "chargeId",
+   "returnAll",
+   "limit",
+   "updateFields",
+   "duration",
+   "type",
+   "amountOff",
+   "percentOff",
+   "name",
+   "filters",
+   "eventName",
+   "value",
+   "number",
+   "cvc",
+   "expirationMonth",
+   "expirationYear"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.stripeTrigger",
+  "displayName": "Stripe Trigger",
+  "version": "1",
+  "credentials": [
+   "stripeApi"
+  ],
+  "params": [
+   "events",
+   "apiVersion"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.summarize",
+  "displayName": "Summarize",
+  "version": "1.1",
+  "credentials": [],
+  "params": [
+   "fieldsToSummarize",
+   "fieldsToSplitBy",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.supabase",
+  "displayName": "Supabase",
+  "version": "1",
+  "credentials": [
+   "supabaseApi"
+  ],
+  "params": [
+   "useCustomSchema",
+   "schema",
+   "resource",
+   "operation",
+   "tableId",
+   "filterType",
+   "matchType",
+   "filters",
+   "jsonNotice",
+   "filterString",
+   "filterStringParameters",
+   "dataToSend",
+   "inputsToIgnore",
+   "fieldsUi",
+   "returnAll",
+   "limit",
+   "orderBy"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.surveyMonkeyTrigger",
+  "displayName": "SurveyMonkey Trigger",
+  "version": "1",
+  "credentials": [
+   "surveyMonkeyApi",
+   "surveyMonkeyOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "objectType",
+   "event",
+   "surveyIds",
+   "surveyId",
+   "collectorIds",
+   "resolveData",
+   "onlyAnswers"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.syncroMsp",
+  "displayName": "SyncroMSP",
+  "version": "1",
+  "credentials": [
+   "syncroMspApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "filters",
+   "customerId",
+   "email",
+   "additionalFields",
+   "updateFields",
+   "subject",
+   "ticketId",
+   "contactId",
+   "alertId",
+   "assetId",
+   "description",
+   "muteFor"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.taiga",
+  "displayName": "Taiga",
+  "version": "1",
+  "credentials": [
+   "taigaApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "projectId",
+   "subject",
+   "additionalFields",
+   "epicId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "issueId",
+   "taskId",
+   "userStoryId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.taigaTrigger",
+  "displayName": "Taiga Trigger",
+  "version": "1",
+  "credentials": [
+   "taigaApi"
+  ],
+  "params": [
+   "projectId",
+   "resources",
+   "operations"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.tapfiliate",
+  "displayName": "Tapfiliate",
+  "version": "1",
+  "credentials": [
+   "tapfiliateApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email",
+   "firstname",
+   "lastname",
+   "additionalFields",
+   "affiliateId",
+   "returnAll",
+   "limit",
+   "filters",
+   "metadataUi",
+   "key",
+   "value",
+   "programId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.telegram",
+  "displayName": "Telegram",
+  "version": "1.2",
+  "credentials": [
+   "telegramApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "chatId",
+   "messageId",
+   "additionalFields",
+   "userId",
+   "description",
+   "title",
+   "queryId",
+   "results",
+   "fileId",
+   "download",
+   "messageType",
+   "binaryData",
+   "binaryPropertyName",
+   "inlineMessageId",
+   "replyMarkup",
+   "file",
+   "action",
+   "latitude",
+   "longitude",
+   "media",
+   "text",
+   "richFormat",
+   "richMessageText",
+   "forceReply",
+   "inlineKeyboard",
+   "replyKeyboard",
+   "replyKeyboardOptions",
+   "replyKeyboardRemove",
+   "draftId",
+   "message",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "advancedInteractivityNotice",
+   "chatApproval",
+   "approverIds",
+   "unauthorizedReplyText",
+   "postDecisionBehavior",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.telegramTrigger",
+  "displayName": "Telegram Trigger",
+  "version": "1.5",
+  "credentials": [
+   "telegramApi"
+  ],
+  "params": [
+   "telegramTriggerNotice",
+   "updates",
+   "attachmentNotice",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.theHive",
+  "displayName": "TheHive",
+  "version": "1",
+  "credentials": [
+   "theHiveApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "id",
+   "caseId",
+   "title",
+   "description",
+   "severity",
+   "date",
+   "tags",
+   "tlp",
+   "status",
+   "type",
+   "source",
+   "sourceRef",
+   "follow",
+   "artifactUi",
+   "responder",
+   "jsonParameters",
+   "additionalFields",
+   "updateFields",
+   "options",
+   "filters",
+   "dataType",
+   "data",
+   "binaryProperty",
+   "message",
+   "startDate",
+   "ioc",
+   "sighted",
+   "analyzers",
+   "owner",
+   "flag",
+   "taskId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.theHiveProject",
+  "displayName": "TheHive 5",
+  "version": "1",
+  "credentials": [
+   "theHiveProjectApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "alertFields",
+   "observableUi",
+   "alertId",
+   "id",
+   "responder",
+   "options",
+   "returnAll",
+   "limit",
+   "filters",
+   "sort",
+   "status",
+   "caseId",
+   "alertUpdateFields",
+   "attachmentsUi",
+   "caseFields",
+   "attachmentId",
+   "caseUpdateFields",
+   "addTo",
+   "message",
+   "commentId",
+   "searchIn",
+   "logId",
+   "taskId",
+   "logFields",
+   "allTasks",
+   "createIn",
+   "dataType",
+   "data",
+   "observableFields",
+   "observableId",
+   "analyzers",
+   "observableUpdateFields",
+   "location",
+   "title",
+   "category",
+   "content",
+   "pageId",
+   "searchInKnowledgeBase",
+   "queryJson",
+   "taskFields",
+   "allCases",
+   "taskUpdateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.theHiveProjectTrigger",
+  "displayName": "TheHive 5 Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "events",
+   "filters",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.theHiveTrigger",
+  "displayName": "TheHive Trigger",
+  "version": "2",
+  "credentials": [],
+  "params": [
+   "notice",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.timeSaved",
+  "displayName": "Track Time Saved",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "notice",
+   "mode",
+   "minutesSaved"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.timescaleDb",
+  "displayName": "TimescaleDB",
+  "version": "1.1",
+  "credentials": [
+   "timescaleDb"
+  ],
+  "params": [
+   "operation",
+   "query",
+   "schema",
+   "table",
+   "columns",
+   "updateKey",
+   "returnFields",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.todoist",
+  "displayName": "Todoist",
+  "version": "2.2",
+  "credentials": [
+   "todoistApi",
+   "todoistOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "taskId",
+   "project",
+   "section",
+   "options",
+   "labels",
+   "content",
+   "text",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "projectId",
+   "name",
+   "projectOptions",
+   "projectUpdateFields",
+   "sectionId",
+   "sectionProject",
+   "sectionName",
+   "sectionOptions",
+   "sectionUpdateFields",
+   "sectionFilters",
+   "commentId",
+   "commentTaskId",
+   "commentContent",
+   "commentUpdateFields",
+   "commentFilters",
+   "labelId",
+   "labelName",
+   "labelOptions",
+   "labelUpdateFields",
+   "reminderId",
+   "itemId",
+   "dueDateType",
+   "natural_language_representation",
+   "date",
+   "datetime",
+   "timezone",
+   "reminderOptions",
+   "reminderUpdateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.togglTrigger",
+  "displayName": "Toggl Trigger",
+  "version": "1",
+  "credentials": [
+   "togglApi"
+  ],
+  "params": [
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.totp",
+  "displayName": "TOTP",
+  "version": "1",
+  "credentials": [
+   "totpApi"
+  ],
+  "params": [
+   "operation",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.travisCi",
+  "displayName": "TravisCI",
+  "version": "1",
+  "credentials": [
+   "travisCiApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "buildId",
+   "additionalFields",
+   "returnAll",
+   "limit",
+   "slug",
+   "branch"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.trello",
+  "displayName": "Trello",
+  "version": "1",
+  "credentials": [
+   "trelloApi",
+   "trelloOAuth1Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "cardId",
+   "url",
+   "additionalFields",
+   "id",
+   "name",
+   "description",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "idMember",
+   "type",
+   "email",
+   "listId",
+   "text",
+   "commentId",
+   "checklistId",
+   "checkItemId",
+   "boardId",
+   "color",
+   "archive",
+   "idBoard"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.trelloTrigger",
+  "displayName": "Trello Trigger",
+  "version": "1",
+  "credentials": [
+   "trelloApi",
+   "trelloOAuth1Api"
+  ],
+  "params": [
+   "authentication",
+   "id"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.twake",
+  "displayName": "Twake",
+  "version": "1",
+  "credentials": [
+   "twakeCloudApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "channelId",
+   "content",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.twilio",
+  "displayName": "Twilio",
+  "version": "1",
+  "credentials": [
+   "twilioApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "from",
+   "to",
+   "toWhatsapp",
+   "message",
+   "twiml",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.twilioTrigger",
+  "displayName": "Twilio Trigger",
+  "version": "1",
+  "credentials": [
+   "twilioApi"
+  ],
+  "params": [
+   "updates",
+   "callTriggerNotice"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.twist",
+  "displayName": "Twist",
+  "version": "1",
+  "credentials": [
+   "twistOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "workspaceId",
+   "name",
+   "additionalFields",
+   "channelId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "threadId",
+   "content",
+   "commentId",
+   "conversationId",
+   "id",
+   "title"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.typeformTrigger",
+  "displayName": "Typeform Trigger",
+  "version": "1.1",
+  "credentials": [
+   "typeformApi",
+   "typeformOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "formId",
+   "simplifyAnswers",
+   "onlyAnswers"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.unleashedSoftware",
+  "displayName": "Unleashed Software",
+  "version": "1.1",
+  "credentials": [
+   "unleashedSoftwareApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "returnAll",
+   "limit",
+   "filters",
+   "productId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.uplead",
+  "displayName": "Uplead",
+  "version": "1",
+  "credentials": [
+   "upleadApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "company",
+   "domain",
+   "email",
+   "firstname",
+   "lastname"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.uproc",
+  "displayName": "uProc",
+  "version": "1",
+  "credentials": [
+   "uprocApi"
+  ],
+  "params": [
+   "group",
+   "tool",
+   "credit_card",
+   "address",
+   "country",
+   "coordinates",
+   "date",
+   "years1",
+   "years2",
+   "years",
+   "ean",
+   "asin",
+   "text",
+   "gender",
+   "language",
+   "account",
+   "bic",
+   "isocode",
+   "iban",
+   "swift",
+   "bcid",
+   "author",
+   "category",
+   "isbn",
+   "publisher",
+   "title",
+   "dni",
+   "cif",
+   "nie",
+   "nif",
+   "ip",
+   "city",
+   "phone",
+   "zipcode",
+   "upc",
+   "isin",
+   "number",
+   "uuid",
+   "domain",
+   "duns",
+   "email",
+   "name",
+   "url",
+   "profile",
+   "role",
+   "taxid",
+   "company",
+   "area",
+   "clevel",
+   "location",
+   "keyword",
+   "message",
+   "message1",
+   "message2",
+   "seniority",
+   "address1",
+   "address2",
+   "fuel_consumption",
+   "price_liter",
+   "coordinates1",
+   "coordinates2",
+   "ip1",
+   "ip2",
+   "phone1",
+   "phone2",
+   "zipcode1",
+   "zipcode2",
+   "distance",
+   "coin",
+   "country_code",
+   "amount",
+   "isocode1",
+   "isocode2",
+   "date1",
+   "date2",
+   "date3",
+   "period",
+   "useragent",
+   "type",
+   "width",
+   "fullpage",
+   "selector",
+   "delay",
+   "viewport",
+   "email_from",
+   "email_to",
+   "subject",
+   "body",
+   "page",
+   "firstname",
+   "lastname",
+   "mode",
+   "fullname",
+   "mobile",
+   "url_dlr",
+   "source",
+   "destination",
+   "size",
+   "list",
+   "keywords",
+   "current_company",
+   "current_title",
+   "included_companies",
+   "excluded_companies",
+   "included_titles",
+   "excluded_titles",
+   "included_keywords",
+   "excluded_keywords",
+   "length1",
+   "length2",
+   "length",
+   "separator",
+   "latitude",
+   "longitude",
+   "radius",
+   "imei",
+   "regex",
+   "host",
+   "port",
+   "table",
+   "number1",
+   "number2",
+   "number3",
+   "luhn",
+   "mod",
+   "rest",
+   "password",
+   "locality",
+   "surname",
+   "province",
+   "format",
+   "text1",
+   "text2",
+   "glue",
+   "field",
+   "find",
+   "replace",
+   "texts",
+   "html",
+   "tin",
+   "vin",
+   "count1",
+   "count2",
+   "count",
+   "additionalOptions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.uptimeRobot",
+  "displayName": "UptimeRobot",
+  "version": "1",
+  "credentials": [
+   "uptimeRobotApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "friendlyName",
+   "type",
+   "url",
+   "id",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "value",
+   "duration",
+   "weekDay",
+   "monthDay",
+   "start_time",
+   "monitors",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.urlScanIo",
+  "displayName": "urlscan.io",
+  "version": "1",
+  "credentials": [
+   "urlScanIoApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "scanId",
+   "returnAll",
+   "limit",
+   "filters",
+   "url",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.venafiTlsProtectCloud",
+  "displayName": "Venafi TLS Protect Cloud",
+  "version": "1",
+  "credentials": [
+   "venafiTlsProtectCloudApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "certificateId",
+   "downloadItem",
+   "keystoreType",
+   "certificateLabel",
+   "privateKeyPassphrase",
+   "keystorePassphrase",
+   "binaryProperty",
+   "options",
+   "returnAll",
+   "limit",
+   "filters",
+   "applicationId",
+   "existingCertificateId",
+   "certificateIssuingTemplateId",
+   "certificateSigningRequest",
+   "generateCsr",
+   "commonName",
+   "additionalFields",
+   "certificateRequestId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.venafiTlsProtectCloudTrigger",
+  "displayName": "Venafi TLS Protect Cloud Trigger",
+  "version": "1",
+  "credentials": [
+   "venafiTlsProtectCloudApi"
+  ],
+  "params": [
+   "resource",
+   "triggerOn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.venafiTlsProtectDatacenter",
+  "displayName": "Venafi TLS Protect Datacenter",
+  "version": "1",
+  "credentials": [
+   "venafiTlsProtectDatacenterApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "PolicyDN",
+   "Subject",
+   "additionalFields",
+   "certificateDn",
+   "includePrivateKey",
+   "password",
+   "binaryProperty",
+   "certificateId",
+   "returnAll",
+   "limit",
+   "options",
+   "certificateDN",
+   "policyDn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.venafiTlsProtectDatacenterTrigger",
+  "displayName": "Venafi TLS Protect Datacenter Trigger",
+  "version": "1",
+  "credentials": [
+   "venafiTlsProtectDatacenterApi"
+  ],
+  "params": [
+   "triggerOn"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.vero",
+  "displayName": "Vero",
+  "version": "1",
+  "credentials": [
+   "veroApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "id",
+   "jsonParameters",
+   "additionalFields",
+   "dataAttributesUi",
+   "dataAttributesJson",
+   "newId",
+   "tags",
+   "email",
+   "eventName",
+   "extraAttributesUi",
+   "extraAttributesJson"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.vonage",
+  "displayName": "Vonage",
+  "version": "1",
+  "credentials": [
+   "vonageApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "from",
+   "to",
+   "message",
+   "additionalFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wait",
+  "displayName": "Wait",
+  "version": "1.1",
+  "credentials": [
+   "httpBasicAuth",
+   "httpHeaderAuth",
+   "jwtAuth"
+  ],
+  "params": [
+   "resume",
+   "incomingAuthentication",
+   "dateTime",
+   "amount",
+   "unit",
+   "webhookNotice",
+   "formNotice",
+   "formTitle",
+   "formDescription",
+   "formFields",
+   "responseMode",
+   "httpMethod",
+   "responseCode",
+   "responseData",
+   "responseBinaryPropertyName",
+   "limitWaitTime",
+   "limitType",
+   "resumeAmount",
+   "resumeUnit",
+   "maxDateAndTime",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.webflow",
+  "displayName": "Webflow",
+  "version": "2",
+  "credentials": [
+   "webflowOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "siteId",
+   "collectionId",
+   "live",
+   "fieldsUi",
+   "itemId",
+   "returnAll",
+   "limit"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.webflowTrigger",
+  "displayName": "Webflow Trigger",
+  "version": "2",
+  "credentials": [
+   "webflowOAuth2Api"
+  ],
+  "params": [
+   "site",
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.webhook",
+  "displayName": "Webhook",
+  "version": "2.1",
+  "credentials": [
+   "httpBasicAuth",
+   "httpHeaderAuth",
+   "jwtAuth"
+  ],
+  "params": [
+   "multipleMethods",
+   "httpMethod",
+   "path",
+   "authentication",
+   "requireExecuteAccess",
+   "responseMode",
+   "webhookNotice",
+   "webhookStreamingNotice",
+   "responseCode",
+   "responseData",
+   "responseBinaryPropertyName",
+   "contentTypeNotice",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wekan",
+  "displayName": "Wekan",
+  "version": "1",
+  "credentials": [
+   "wekanApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "title",
+   "owner",
+   "additionalFields",
+   "boardId",
+   "IdUser",
+   "returnAll",
+   "limit",
+   "listId",
+   "swimlaneId",
+   "authorId",
+   "cardId",
+   "fromObject",
+   "updateFields",
+   "comment",
+   "commentId",
+   "items",
+   "checklistId",
+   "checklistItemId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.whatsApp",
+  "displayName": "WhatsApp Business Cloud",
+  "version": "1.1",
+  "credentials": [
+   "whatsAppApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "messagingProduct",
+   "phoneNumberId",
+   "recipientPhoneNumber",
+   "messageType",
+   "name",
+   "additionalFields",
+   "longitude",
+   "latitude",
+   "textBody",
+   "mediaPath",
+   "mediaLink",
+   "mediaId",
+   "mediaPropertyName",
+   "mediaFilename",
+   "template",
+   "components",
+   "mediaGetId",
+   "mediaDeleteId",
+   "message",
+   "responseType",
+   "defineForm",
+   "jsonOutput",
+   "formFields",
+   "approvalOptions",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wise",
+  "displayName": "Wise",
+  "version": "1",
+  "credentials": [
+   "wiseApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "profileId",
+   "borderlessAccountId",
+   "currency",
+   "format",
+   "binaryProperty",
+   "fileName",
+   "additionalFields",
+   "source",
+   "target",
+   "targetAccountId",
+   "amountType",
+   "amount",
+   "sourceCurrency",
+   "targetCurrency",
+   "quoteId",
+   "returnAll",
+   "limit",
+   "transferId",
+   "downloadReceipt",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wiseTrigger",
+  "displayName": "Wise Trigger",
+  "version": "1",
+  "credentials": [
+   "wiseApi"
+  ],
+  "params": [
+   "profileId",
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wooCommerce",
+  "displayName": "WooCommerce",
+  "version": "1",
+  "credentials": [
+   "wooCommerceApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "email",
+   "additionalFields",
+   "customerId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields",
+   "name",
+   "dimensionsUi",
+   "imagesUi",
+   "metadataUi",
+   "productId",
+   "options",
+   "billingUi",
+   "couponLinesUi",
+   "feeLinesUi",
+   "lineItemsUi",
+   "shippingUi",
+   "shippingLinesUi",
+   "orderId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wooCommerceTrigger",
+  "displayName": "WooCommerce Trigger",
+  "version": "1",
+  "credentials": [
+   "wooCommerceApi"
+  ],
+  "params": [
+   "event"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wordpress",
+  "displayName": "Wordpress",
+  "version": "1",
+  "credentials": [
+   "wordpressApi",
+   "wordpressOAuth2Api"
+  ],
+  "params": [
+   "authType",
+   "resource",
+   "operation",
+   "title",
+   "additionalFields",
+   "postId",
+   "updateFields",
+   "options",
+   "returnAll",
+   "limit",
+   "pageId",
+   "username",
+   "name",
+   "firstName",
+   "lastName",
+   "email",
+   "password",
+   "userId",
+   "reassign"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.workableTrigger",
+  "displayName": "Workable Trigger",
+  "version": "1",
+  "credentials": [
+   "workableApi"
+  ],
+  "params": [
+   "triggerOn",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.workflowTrigger",
+  "displayName": "Workflow Trigger",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "oldVersionNotice",
+   "events"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.writeBinaryFile",
+  "displayName": "Write Binary File",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "fileName",
+   "dataPropertyName",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.wufooTrigger",
+  "displayName": "Wufoo Trigger",
+  "version": "1",
+  "credentials": [
+   "wufooApi"
+  ],
+  "params": [
+   "form",
+   "onlyAnswers"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.xero",
+  "displayName": "Xero",
+  "version": "1",
+  "credentials": [
+   "xeroOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "organizationId",
+   "name",
+   "additionalFields",
+   "contactId",
+   "returnAll",
+   "limit",
+   "options",
+   "updateFields",
+   "type",
+   "lineItemsUi",
+   "invoiceId"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.xml",
+  "displayName": "XML",
+  "version": "1",
+  "credentials": [],
+  "params": [
+   "mode",
+   "xmlNotice",
+   "dataPropertyName",
+   "options"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.yourls",
+  "displayName": "Yourls",
+  "version": "1",
+  "credentials": [
+   "yourlsApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "url",
+   "additionalFields",
+   "shortUrl"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.youTube",
+  "displayName": "YouTube",
+  "version": "1",
+  "credentials": [
+   "youTubeOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "part",
+   "returnAll",
+   "limit",
+   "filters",
+   "options",
+   "channelId",
+   "updateFields",
+   "binaryProperty",
+   "title",
+   "playlistId",
+   "videoId",
+   "playlistItemId",
+   "regionCode",
+   "categoryId",
+   "rating"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.zammad",
+  "displayName": "Zammad",
+  "version": "1",
+  "credentials": [
+   "zammadBasicAuthApi",
+   "zammadTokenAuthApi"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "name",
+   "id",
+   "additionalFields",
+   "updateFields",
+   "returnAll",
+   "limit",
+   "title",
+   "group",
+   "customer",
+   "article",
+   "firstname",
+   "lastname",
+   "query",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.zendesk",
+  "displayName": "Zendesk",
+  "version": "1",
+  "credentials": [
+   "zendeskApi",
+   "zendeskOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "description",
+   "jsonParameters",
+   "additionalFields",
+   "additionalFieldsJson",
+   "id",
+   "updateFields",
+   "updateFieldsJson",
+   "ticketType",
+   "returnAll",
+   "limit",
+   "options",
+   "ticketFieldId",
+   "name",
+   "filters"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.zendeskTrigger",
+  "displayName": "Zendesk Trigger",
+  "version": "1",
+  "credentials": [
+   "zendeskApi",
+   "zendeskOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "service",
+   "options",
+   "conditions"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.zohoCrm",
+  "displayName": "Zoho CRM",
+  "version": "1",
+  "credentials": [
+   "zohoOAuth2Api"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "accountName",
+   "additionalFields",
+   "accountId",
+   "returnAll",
+   "limit",
+   "options",
+   "updateFields",
+   "lastName",
+   "contactId",
+   "dealName",
+   "stage",
+   "dealId",
+   "subject",
+   "Product_Details",
+   "invoiceId",
+   "Company",
+   "leadId",
+   "productName",
+   "productId",
+   "vendorId",
+   "purchaseOrderId",
+   "quoteId",
+   "salesOrderId",
+   "vendorName"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.zoom",
+  "displayName": "Zoom",
+  "version": "1",
+  "credentials": [
+   "zoomApi",
+   "zoomOAuth2Api"
+  ],
+  "params": [
+   "authentication",
+   "resource",
+   "operation",
+   "topic",
+   "additionalFields",
+   "meetingId",
+   "returnAll",
+   "limit",
+   "filters",
+   "updateFields"
+  ]
+ },
+ {
+  "type": "n8n-nodes-base.zulip",
+  "displayName": "Zulip",
+  "version": "1",
+  "credentials": [
+   "zulipApi"
+  ],
+  "params": [
+   "resource",
+   "operation",
+   "to",
+   "content",
+   "stream",
+   "topic",
+   "messageId",
+   "updateFields",
+   "dataBinaryProperty",
+   "jsonParameters",
+   "additionalFieldsJson",
+   "subscriptions",
+   "additionalFields",
+   "streamId",
+   "email",
+   "fullName",
+   "password",
+   "shortName",
+   "userId"
+  ]
+ }
+]

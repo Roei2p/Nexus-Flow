@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nexus-Flow</title>
+<style>
+  :root { --bg:#0b0f17; --panel:#131a26; --line:#1f2937; --txt:#e5e7eb; --dim:#8b95a7; --acc:#4f8cff; --ok:#22c55e; --bad:#ef4444; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:15px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 24px; border-bottom:1px solid var(--line); background:var(--panel); }
+  h1 { font-size:18px; margin:0; letter-spacing:.5px; }
+  h1 span { color:var(--acc); }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--dim); margin-inline-end:6px; vertical-align:middle; }
+  .dot.on { background:var(--ok); box-shadow:0 0 8px var(--ok); }
+  .dot.off { background:var(--bad); box-shadow:0 0 8px var(--bad); }
+  main { padding:24px; max-width:1100px; margin:0 auto; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin-bottom:26px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .card .k { color:var(--dim); font-size:12px; text-transform:uppercase; letter-spacing:.6px; }
+  .card .v { font-size:30px; font-weight:600; margin-top:6px; }
+  h2 { font-size:15px; color:var(--dim); text-transform:uppercase; letter-spacing:.8px; margin:26px 0 12px; }
+  table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  th,td { text-align:start; padding:11px 14px; border-bottom:1px solid var(--line); font-size:14px; }
+  th { color:var(--dim); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:.5px; }
+  tr:last-child td { border-bottom:none; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:999px; font-size:12px; }
+  .pill.on { background:rgba(34,197,94,.15); color:var(--ok); }
+  .pill.off { background:rgba(139,149,167,.15); color:var(--dim); }
+  .pill.fail { background:rgba(239,68,68,.15); color:var(--bad); }
+  .pill.ok { background:rgba(34,197,94,.15); color:var(--ok); }
+  button { font:inherit; font-size:13px; padding:5px 12px; border-radius:8px; border:1px solid var(--line); background:#0f1522; color:var(--txt); cursor:pointer; }
+  button:hover { border-color:var(--acc); color:var(--acc); }
+  button:disabled { opacity:.5; cursor:wait; }
+  .empty { padding:18px; color:var(--dim); background:var(--panel); border:1px dashed var(--line); border-radius:12px; }
+  footer { color:var(--dim); font-size:12px; text-align:center; padding:20px; }
+  .id { color:var(--dim); font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Nexus<span>-Flow</span></h1>
+  <div id="status"><span class="dot"></span>מתחבר…</div>
+</header>
+<main>
+  <div class="cards">
+    <div class="card"><div class="k">n8n</div><div class="v" id="c-n8n">—</div></div>
+    <div class="card"><div class="k">סה"כ Workflows</div><div class="v" id="c-total">—</div></div>
+    <div class="card"><div class="k">פעילים</div><div class="v" id="c-active">—</div></div>
+    <div class="card"><div class="k">לא פעילים</div><div class="v" id="c-inactive">—</div></div>
+    <div class="card"><div class="k">הרצות אחרונות</div><div class="v" id="c-exec">—</div></div>
+    <div class="card"><div class="k">אירועים התקבלו</div><div class="v" id="c-events">—</div></div>
+  </div>
+
+  <h2>Workflows</h2>
+  <div id="workflows" class="empty">טוען…</div>
+
+  <h2>הרצות אחרונות</h2>
+  <div id="executions" class="empty">טוען…</div>
+
+  <h2>אירועים שנשלחו מ־n8n</h2>
+  <div id="events" class="empty">טוען…</div>
+</main>
+<footer>Nexus-Flow · מתעדכן כל 5 שניות</footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function j(url, opts) {
+  const r = await fetch(url, opts);
+  const body = await r.json().catch(() => null);
+  if (!r.ok) throw new Error((body && body.error) || ('HTTP ' + r.status));
+  return body;
+}
+
+async function toggle(id, act) {
+  const btn = document.querySelector(`button[data-id="${id}"]`);
+  if (btn) btn.disabled = true;
+  try {
+    await j(`/api/workflows/${id}/${act}`, { method: 'POST' });
+    await load();
+  } catch (e) { alert('שגיאה: ' + e.message); }
+  finally { if (btn) btn.disabled = false; }
+}
+
+function render(s) {
+  $('#c-n8n').textContent = s.n8n.reachable ? 'מחובר' : 'מנותק';
+  $('#c-total').textContent = s.counts.workflows;
+  $('#c-active').textContent = s.counts.active;
+  $('#c-inactive').textContent = s.counts.inactive;
+  $('#c-exec').textContent = s.counts.executions;
+  const ev = (s.events && s.events.data) || [];
+  $('#c-events').textContent = (s.events && s.events.count) || 0;
+  $('#events').innerHTML = ev.length ? `
+    <table><thead><tr>
+      <th>אירוע</th><th>מקור</th><th>Workflow</th><th>התקבל ב</th>
+    </tr></thead><tbody>
+    ${ev.map(e => `<tr>
+      <td>${esc(e.event)}</td>
+      <td>${esc(e.source)}</td>
+      <td>${esc(e.workflow)}</td>
+      <td class="id">${e.receivedAt ? new Date(e.receivedAt).toLocaleString('he-IL') : '—'}</td>
+    </tr>`).join('')}
+    </tbody></table>` : '<div class="empty">אין אירועים עדיין — הפעל Webhook או חכה לדקה הקרובה</div>';
+
+  $('#status').innerHTML = s.n8n.reachable
+    ? '<span class="dot on"></span>מחובר ל־n8n'
+    : '<span class="dot off"></span>n8n לא נגיש';
+
+  $('#workflows').innerHTML = s.workflows.length ? `
+    <table><thead><tr>
+      <th>שם</th><th>מזהה</th><th>סטטוס</th><th>עדכון</th><th></th>
+    </tr></thead><tbody>
+    ${s.workflows.map(w => `<tr>
+      <td>${esc(w.name)}</td>
+      <td class="id">${esc(w.id)}</td>
+      <td><span class="pill ${w.active ? 'on' : 'off'}">${w.active ? 'פעיל' : 'כבוי'}</span></td>
+      <td class="id">${w.updatedAt ? new Date(w.updatedAt).toLocaleString('he-IL') : '—'}</td>
+      <td><button data-id="${esc(w.id)}" onclick="toggle('${esc(w.id)}','${w.active ? 'deactivate' : 'activate'}')">
+        ${w.active ? 'כבה' : 'הפעל'}</button></td>
+    </tr>`).join('')}
+    </tbody></table>` : '<div class="empty">אין Workflows עדיין</div>';
+
+  $('#executions').innerHTML = s.executions.length ? `
+    <table><thead><tr>
+      <th>מזהה</th><th>סטטוס</th><th>החל ב</th><th>משך</th>
+    </tr></thead><tbody>
+    ${s.executions.map(x => `<tr>
+      <td class="id">${esc(x.id)}</td>
+      <td><span class="pill ${x.status === 'success' ? 'ok' : x.status === 'error' ? 'fail' : 'off'}">${esc(x.status)}</span></td>
+      <td class="id">${x.startedAt ? new Date(x.startedAt).toLocaleString('he-IL') : '—'}</td>
+      <td class="id">${x.stopAt && x.startedAt ? Math.round((new Date(x.stopAt) - new Date(x.startedAt)) / 1000) + 's' : '—'}</td>
+    </tr>`).join('')}
+    </tbody></table>` : '<div class="empty">אין הרצות עדיין</div>';
+}
+
+async function load() {
+  try { render(await j('/api/summary')); }
+  catch (e) {
+    $('#status').innerHTML = '<span class="dot off"></span>שגיאת חיבור';
+    $('#workflows').innerHTML = '<div class="empty">לא ניתן להגיע לשרת: ' + esc(e.message) + '</div>';
+  }
+}
+
+load();
+setInterval(load, 5000);
+</script>
+</body>
+</html>

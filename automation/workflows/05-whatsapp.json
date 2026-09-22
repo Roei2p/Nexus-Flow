@@ -1,0 +1,74 @@
+{
+  "name": "Nexus - WhatsApp Notify",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "nexus-whatsapp",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "e3c0f0a5-0001-4000-8000-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a1", "name": "event", "value": "whatsapp.send", "type": "string" },
+            { "id": "a2", "name": "workflow", "value": "={{ $workflow.name }}", "type": "string" },
+            { "id": "a3", "name": "source", "value": "n8n:webhook", "type": "string" },
+            { "id": "a4", "name": "at", "value": "={{ $now.toISO() }}", "type": "string" },
+            { "id": "a5", "name": "text", "value": "={{ 'Nexus-Flow event: ' + JSON.stringify($('Webhook').item.json.body) }}", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e3c0f0a5-0002-4000-8000-000000000002",
+      "name": "Build Event",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "messagingProduct": "whatsapp",
+        "phoneNumberId": "",
+        "recipientPhoneNumber": "+972500000000",
+        "messageType": "text",
+        "textBody": "={{ $json.text }}"
+      },
+      "id": "e3c0f0a5-0003-4000-8000-000000000003",
+      "name": "Send WhatsApp",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://nexus:3000/api/events",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify(Object.assign({}, $('Build Event').item.json, { channel: 'whatsapp', status: 'sent' })) }}",
+        "options": {}
+      },
+      "id": "e3c0f0a5-0004-4000-8000-000000000004",
+      "name": "Notify Nexus",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 0]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Build Event", "type": "main", "index": 0 }]] },
+    "Build Event": { "main": [[{ "node": "Send WhatsApp", "type": "main", "index": 0 }]] },
+    "Send WhatsApp": { "main": [[{ "node": "Notify Nexus", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

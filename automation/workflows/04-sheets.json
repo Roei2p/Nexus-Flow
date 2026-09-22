@@ -1,0 +1,79 @@
+{
+  "name": "Nexus - Sheets Log",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "nexus-sheets",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "e2b0f0a4-0001-4000-8000-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "a1", "name": "event", "value": "sheets.append", "type": "string" },
+            { "id": "a2", "name": "workflow", "value": "={{ $workflow.name }}", "type": "string" },
+            { "id": "a3", "name": "source", "value": "n8n:webhook", "type": "string" },
+            { "id": "a4", "name": "at", "value": "={{ $now.toISO() }}", "type": "string" },
+            { "id": "a5", "name": "payload", "value": "={{ JSON.stringify($('Webhook').item.json.body) }}", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e2b0f0a4-0002-4000-8000-000000000002",
+      "name": "Build Event",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "sheet",
+        "operation": "append",
+        "documentId": { "mode": "id", "value": "PASTE_SPREADSHEET_ID_HERE" },
+        "sheetName": { "mode": "name", "value": "Sheet1" },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "e2b0f0a4-0003-4000-8000-000000000003",
+      "name": "Append Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://nexus:3000/api/events",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify(Object.assign({}, $('Build Event').item.json, { channel: 'sheets', status: 'appended' })) }}",
+        "options": {}
+      },
+      "id": "e2b0f0a4-0004-4000-8000-000000000004",
+      "name": "Notify Nexus",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 0]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Build Event", "type": "main", "index": 0 }]] },
+    "Build Event": { "main": [[{ "node": "Append Row", "type": "main", "index": 0 }]] },
+    "Append Row": { "main": [[{ "node": "Notify Nexus", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

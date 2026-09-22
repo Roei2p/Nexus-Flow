@@ -1,0 +1,5 @@
+{
+  "whatsApp": ["WhatsApp/WhatsApp.node.js"],
+  "emailSend": ["EmailSend/EmailSend.node.js", "SendEmail/SendEmail.node.js"],
+  "googleSheets": ["Google/Sheet/GoogleSheets.node.js"]
+}
