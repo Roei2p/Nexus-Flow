@@ -9,12 +9,21 @@ http://localhost:5678   n8n 2.39.7                 (workflow engine)
 
 ## Quick start
 
+The bring-up scripts sit next to `docker-compose.yml`, one level **above** this
+repo (`C:\AI\8n8\`), because that is where the compose file and the `env` secrets live:
+
 ```powershell
-.\up.ps1          # build + start + wait for health
-.\up.ps1 -Test    # ...then run the verification suites
-.\up.ps1 -Logs    # follow logs
-.\up.ps1 -Down    # stop
+cd C:\AI\8n8
+up.cmd           # build + start + wait for health
+up.cmd -Test     # ...then run the verification suites
+up.cmd -Logs     # follow logs
+up.cmd -Down     # stop
 ```
+
+`up.cmd` wraps `up.ps1` with `-ExecutionPolicy Bypass` for that single process, so it
+runs on machines where PowerShell's execution policy blocks `.\up.ps1` directly, without
+touching any machine-wide policy. `.\up.ps1 <args>` still works wherever the policy
+already allows it, and both forward every argument identically.
 
 Requirements: Docker Desktop running. Node 20+ only for the CLI suites (`node` alone,
 no `npm install` anywhere - every script is dependency-free).
@@ -37,9 +46,23 @@ no `npm install` anywhere - every script is dependency-free).
 node automation/deploy.mjs    # push automation/workflows/*.json to n8n and activate
 node automation/run.mjs       # 9-check end-to-end suite
 node builder/test-greenapi.mjs # WhatsApp channel suite (sends to own number)
+node builder/test-simulate.mjs # validate + dry-run every shipped workflow
 node builder/test-plan.mjs     # "customer request -> workflow" suite
-node builder/catalog.mjs       # re-scrape node catalog (run inside container)
 ```
+
+Re-scraping the node catalog has to happen **inside** the n8n container, because it
+reads the installed `n8n-nodes-base` package directly:
+
+```powershell
+docker cp builder/catalog.mjs 8n8-n8n-1:/tmp/catalog.mjs
+docker exec 8n8-n8n-1 node /tmp/catalog.mjs
+docker cp 8n8-n8n-1:/tmp/catalog-index.json builder/data/catalog-index.json
+docker cp 8n8-n8n-1:/tmp/catalog-full.json  builder/data/catalog-full.json
+```
+
+Do this after every n8n upgrade: the catalog has to match the installed node
+descriptions or `validate.mjs` will accept types/parameter values that n8n rejects,
+or reject ones it would accept.
 
 ## Configuration
 
