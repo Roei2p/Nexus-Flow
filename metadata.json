@@ -1,0 +1,6 @@
+{
+  "name": "Nexus-Flow Autonomous Automation Factory",
+  "description": "פלטפורמה אוטונומית מתקדמת לבנייה, הפעלה וריפוי אוטומטי של אוטומציות עסקיות בשפה טבעית בעברית עם חיבור OAuth עצמאי בקליק אחד ללא מפתחות API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
