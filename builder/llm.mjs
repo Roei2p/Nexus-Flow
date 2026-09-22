@@ -23,12 +23,17 @@ loadDotEnv();
 
 // Verified usable on this account (builder/probe-models.mjs, 11 of 82).
 // Ordered by suitability for structured JSON generation; retried in order.
+// Measured against the real 6 KB planner prompt: gpt-oss is the only model in
+// this list that returned a valid workflow JSON, so it leads. deepseek times
+// out on that prompt, poolside answers 503 (worker request limit), and the
+// vision model answers in ~17s but never with parseable workflow JSON - so
+// those are last-ditch fallbacks, not defaults.
 const NVIDIA_CATALOG = [
-  'deepseek-ai/deepseek-v4.1-flash',
   'openai/gpt-oss-20b',
+  'deepseek-ai/deepseek-v4.1-flash',
   'nvidia/nemotron-3.5-lightning-30b-a3b',
-  'meta/llama-3.2-11b-vision-instruct',
   'poolside/laguna-xs-2.1',
+  'meta/llama-3.2-11b-vision-instruct',
 ];
 
 const PROVIDERS = [
@@ -126,8 +131,9 @@ export function availableModels() {
 
 export class LlmNotConfiguredError extends Error {
   constructor() {
-    super('No LLM API key configured. Set one of: OPENAI_API_KEY, ANTHROPIC_API_KEY, '
-      + 'OPENROUTER_API_KEY, GEMINI_API_KEY, or OLLAMA_HOST - in C:\\AI\\8n8\\.env then restart Docker.');
+    super('No LLM API key configured. Set one of: NVIDIA_API_KEY (this install uses the '
+      + 'short alias "nvidia"), OPENAI_API_KEY, ANTHROPIC_API_KEY, OPENROUTER_API_KEY, '
+      + 'GEMINI_API_KEY, or OLLAMA_HOST - in C:\\AI\\8n8\\.env then restart Docker.');
     this.code = 'LLM_NOT_CONFIGURED';
   }
 }

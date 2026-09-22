@@ -14,10 +14,14 @@ const REQUESTS = process.argv.slice(2).length
 console.log('provider:', JSON.stringify(availableModels()));
 console.log('');
 
+// Ordered by what actually works against this endpoint: gpt-oss is the only
+// model measured returning a valid workflow JSON for the real planner prompt,
+// while deepseek times out on it. Leading with a model that dies costs 180s
+// before the useful one is even tried.
 const models = [
   process.env.NEXUS_LLM_MODEL,
-  'deepseek-ai/deepseek-v4.1-flash',
   'openai/gpt-oss-20b',
+  'deepseek-ai/deepseek-v4.1-flash',
   'nvidia/nemotron-3.5-lightning-30b-a3b',
   'meta/llama-3.2-11b-vision-instruct',
 ].filter(Boolean);

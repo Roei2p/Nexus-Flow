@@ -81,11 +81,14 @@ Return the JSON object now.`;
  */
 export async function plan(request, context = {}) {
   const provider = detectProvider();
-  const prompt = buildPrompt(request, context);
+  let prompt = buildPrompt(request, context);
   const attempts = [];
   let parsed = null;
 
-  for (let i = 0; i < 3; i++) {
+  // Two attempts rather than three: each call costs well over a minute against
+  // this endpoint, and a retry that resends an identical prompt just reproduces
+  // the same failure.
+  for (let i = 0; i < 2; i++) {
     const t0 = Date.now();
     const { text, model } = await chat(SYSTEM, prompt, { model: context.model });
     const raw = { text, model, ms: Date.now() - t0, chars: text.length };
@@ -96,8 +99,11 @@ export async function plan(request, context = {}) {
       break;
     } catch (e) {
       attempts.push({ ...raw, parsed: false, error: e.message });
-      // give the model its own failure back so it can correct itself
-      prompt.length; // no-op, keeps prompt immutable
+      // Give the model its own failure back so it can actually correct itself.
+      prompt = `${prompt}\n\nYour previous reply could not be used (${e.message}). `
+        + 'Reply with exactly ONE JSON object, starting with { and ending with }, '
+        + 'and with no prose or markdown fences around it. Previous reply:\n'
+        + text.slice(0, 1500);
     }
   }
 
