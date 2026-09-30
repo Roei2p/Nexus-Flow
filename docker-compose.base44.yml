@@ -1,0 +1,96 @@
+services:
+  # ==========================================
+  # Frontend: Express + Vite dev server (port 3000)
+  # Serves the React app and the /api/* routes from server.ts
+  # ==========================================
+  web:
+    image: node:22-slim
+    container_name: nexus_web
+    restart: on-failure
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DISABLE_HMR=true
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX:-}
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+    env_file:
+      - /run/base44/app.env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ["sh", "-ec", "npm install --legacy-peer-deps && exec npx tsx server.ts"]
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/health').then(r=>{if(!r.ok)throw 0}).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - nexus_network
+
+  # ==========================================
+  # PostgreSQL Database
+  # ==========================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: nexus_postgres
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nexus_flow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - nexus_network
+
+  # ==========================================
+  # Python FastAPI Backend (port 8000)
+  # ==========================================
+  backend:
+    image: python:3.11-slim
+    container_name: nexus_backend
+    restart: on-failure
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/nexus_flow
+      - N8N_BASE_URL=http://n8n:5678
+      - N8N_API_KEY=${N8N_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - SECRET_KEY=${SECRET_KEY:-nexus-flow-dev-secret-key-32-chars-min}
+      - DEBUG=true
+    env_file:
+      - /run/base44/app.env
+    volumes:
+      - ./backend:/app
+    command: ["sh", "-ec", "pip install --no-cache-dir -r requirements.txt && exec uvicorn main:app --host 0.0.0.0 --port 8000 --reload"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - nexus_network
+
+volumes:
+  postgres_data:
+
+networks:
+  nexus_network:
+    driver: bridge

@@ -1,0 +1,28 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/api/health",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "GEMINI_API_KEY",
+      "description": "Google Gemini API key for AI-powered workflow generation. Get it from Google AI Studio (aistudio.google.com). Without it, the app uses fallback blueprints.",
+      "requiredAtBoot": false,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "ANTHROPIC_API_KEY",
+      "description": "Anthropic API key for the Python backend agent engine. Optional - used by the backend LLM provider.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "OPENAI_API_KEY",
+      "description": "OpenAI API key for the Python backend agent engine. Optional - used by the backend LLM provider.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "N8N_API_KEY",
+      "description": "API key for the local n8n automation engine. Optional - the backend gracefully handles n8n being unavailable.",
+      "requiredAtBoot": false
+    }
+  ]
+}
